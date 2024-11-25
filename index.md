@@ -4,41 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My GitHub Profile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Press Start 2P', cursive; /* Energetic retro gaming font */
-      background-color: #222; /* Dark background */
-      color: #0f0; /* Neon green text color */
+      font-family: 'Roboto Mono', monospace;
+      background-color: #f8f8f8; 
+      color: #333;
+      line-height: 1.6;
     }
     a {
-      color: #0ff; /* Electric blue link color */
+      color: #007bff; 
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
     .container {
-      max-width: 960px;
+      max-width: 800px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 40px;
     }
     header {
       text-align: center;
       margin-bottom: 40px;
     }
     .avatar {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      border: 5px solid #0f0; /* Neon green border */
-      box-shadow: 0 0 10px #0f0; /* Neon green glow */
+      object-fit: cover; 
+      margin-bottom: 20px;
     }
     h1 {
       font-size: 2.5em;
-      margin: 20px 0 10px;
+      font-weight: 700;
+      margin: 10px 0;
     }
     .tagline {
-      font-style: italic;
-      color: #ff0; /* Yellow tagline */
+      font-size: 1.2em;
+      color: #666;
     }
     .social-links {
       margin-top: 20px;
@@ -47,28 +51,25 @@
       display: inline-block;
       margin: 0 10px;
       font-size: 1.5em;
+      color: #555;
+    }
+    .social-links a:hover {
+      color: #007bff;
     }
     section {
       margin-bottom: 40px;
     }
     h2 {
-      font-size: 2em;
-      border-bottom: 2px solid #0f0; /* Neon green underline */
-      padding-bottom: 10px;
+      font-size: 1.8em;
+      font-weight: 700;
       margin-bottom: 20px;
     }
     ul {
-      list-style: none;
-      padding: 0;
+      list-style: disc;
+      padding-left: 40px;
     }
     li {
       margin-bottom: 10px;
-    }
-    .project-image {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #000;
     }
   </style>
 </head>
@@ -77,7 +78,7 @@
     <header>
       <img class="avatar" src="your-profile-image.jpg" alt="My Avatar"> 
       <h1>John Doe</h1>
-      <p class="tagline">Coding with Energy!</p>
+      <p class="tagline">Software Engineer & Web Developer</p>
       <div class="social-links">
         <a href="https://twitter.com/your_twitter"><i class="fab fa-twitter"></i></a>
         <a href="https://linkedin.com/in/your_linkedin"><i class="fab fa-linkedin"></i></a>
@@ -88,18 +89,18 @@
     <main>
       <section>
         <h2>About Me</h2>
-        <p>I'm a passionate software engineer with a love for building cool things with code. I thrive on challenges and enjoy exploring new technologies. When I'm not coding, you can find me [your hobbies - e.g.,  rock climbing, playing video games, exploring new coffee shops].</p>
+        <p>I'm a software engineer with a passion for building clean and efficient web applications. I enjoy learning new technologies and solving challenging problems.</p>
       </section>
 
       <section>
         <h2>Skills</h2>
         <ul>
           <li>Python</li>
-          <li>JavaScript</li>
+          <li>JavaScript (ES6+)</li>
           <li>React</li>
-          <li>HTML/CSS</li>
+          <li>HTML & CSS</li>
           <li>Node.js</li>
-          <li>SQL</li>
+          <li>Git</li>
         </ul>
       </section>
 
@@ -109,12 +110,7 @@
           <li>
             <h3>Software Engineer</h3>
             <p>Acme Corp (2020 - Present)</p>
-            <p>Developing cutting-edge web applications using React and Node.js. Collaborating with a talented team to deliver high-quality products.</p>
-          </li>
-          <li>
-            <h3>Web Developer Intern</h3>
-            <p>XYZ Company (2019)</p>
-            <p>Gained valuable experience in front-end development, working on various projects using HTML, CSS, and JavaScript.</p>
+            <p>Developing and maintaining web applications using React, Node.js, and Python.</p>
           </li>
         </ul>
       </section>
@@ -123,31 +119,19 @@
         <h2>Projects</h2>
         <ul>
           <li>
-            <a href="https://github.com/your_github/project1">
-              <img class="project-image" src="https://source.unsplash.com/300x200/?website,design" alt="Project 1 Screenshot">
-              <h3>Project 1</h3>
-            </a>
-            <p>A brief description of your project.  Built with [technologies used].</p>
+            <a href="https://github.com/your_github/project1">Project 1</a> - Brief description of Project 1.
           </li>
           <li>
-            <a href="https://github.com/your_github/project2">
-              <img class="project-image" src="https://source.unsplash.com/300x200/?mobile-app,technology" alt="Project 2 Screenshot">
-              <h3>Project 2</h3>
-            </a>
-            <p>A brief description of your project. Built with [technologies used].</p>
+            <a href="https://github.com/your_github/project2">Project 2</a> - Brief description of Project 2.
           </li>
         </ul>
       </section>
 
       <section>
         <h2>Contact</h2>
-        <p>Let's connect! You can reach me at <a href="mailto:your_email@example.com">your_email@example.com</a>.</p>
+        <p>You can reach me at <a href="mailto:your_email@example.com">your_email@example.com</a>.</p>
       </section>
     </main>
-
-    <footer>
-      <p>&copy; 2023 John Doe</p>
-    </footer>
   </div>
 </body>
 </html>
