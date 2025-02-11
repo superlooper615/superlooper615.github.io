@@ -7,21 +7,55 @@
     <meta name="description" content="Senior Cloud Engineer specializing in Cloud Architecture, DevOps, and Infrastructure Automation">
 
     <!-- External Resources -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.0.0-beta1/tabler-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/tabler-icons.min.css">
+    <!-- Google Fonts with font-display: swap -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+    <!-- Add Oswald font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 
     <style>
-        /* ========== Color Scheme:  Dark Slate and Electric Blue  ========== */
+       /* ========== Default Color Scheme (Light Mode) ========== */
         :root {
-            /* Dark Slate and Electric Blue */
-            --primary-color: #007BFF;       /* Electric Blue (Bootstrap Primary) */
+            /* Light Mode Colors */
+            --primary-color: #007BFF;       /* Electric Blue */
             --primary-hover: #0056b3;     /* Darker Electric Blue */
-            --text-color: #F8FAFC;          /* Very Light Gray (almost white) */
-            --text-secondary: #A7BBC7;    /* Light Bluish Gray */
-            --background-color: #0F172A;    /* Very Dark Slate (almost black) */
-            --surface-color: #1E293B;     /* Dark Slate */
-            --border-color: #475569;       /* Medium Slate */
+            --text-color: #212529;       /* Dark Gray */
+            --text-secondary: #6c757d;    /* Medium Gray */
+            --background-color: #ffffff;   /* White */
+            --surface-color: #f8f9fa;    /* Light Gray */
+            --border-color: #dee2e6;      /* Lighter Gray */
+            --shadow-color: rgba(0, 0, 0, 0.1); /* Subtle Shadow */
         }
+
+        /* ========== Dark Mode Color Scheme (using prefers-color-scheme) ========== */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                /* Dark Mode Colors */
+                --primary-color: #007BFF;
+                --primary-hover: #0056b3;
+                --text-color: #F8FAFC;
+                --text-secondary: #A7BBC7;
+                --background-color: #0F172A;
+                --surface-color: #1E293B;
+                --border-color: #475569;
+                --shadow-color: rgba(0, 0, 0, 0.3); /* Darker Shadow */
+            }
+            /* Override header for dark mode */
+            header::before {
+              background: linear-gradient(135deg,
+                  rgba(0, 123, 255, 0.25) 10%,  /* More prominent gradient */
+                  transparent 50%);
+            }
+             /* Override experience card for dark mode*/
+            .experience-card:hover {
+                box-shadow: 0 4px 6px -1px var(--shadow-color);
+            }
+            /* Override background color for dark mode*/
+            .header-divider i{
+                background-color: var(--background-color);
+            }
+        }
+
 
 
         /* ========== Global Styles ========== */
@@ -46,33 +80,84 @@
             padding: 0 20px;
         }
 
-        /* ========== Header Styles ========== */
+      /* ========== Header Styles ========== */
         header {
-            padding: 80px 0;
+            padding: 80px 0 60px; /* Adjusted padding */
             text-align: center;
+            border-bottom: none; /* Remove default border*/
+            position: relative;
+        }
+
+        /* Skewed background effect (Optional) */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: linear-gradient(135deg,
-                rgba(0, 123, 255, 0.15),  /* Lighter shade of primary */
-                rgba(0, 123, 255, 0.05)); /* Even lighter shade */
-            border-bottom: 1px solid var(--border-color);
+                rgba(0, 123, 255, 0.1) 10%,
+                transparent 50%);
+            z-index: -1; /* Place behind content */
+            transform: skewY(-4deg); /* Skew the gradient */
+            transform-origin: top left;
+        }
+
+        .name-container {
+          display: flex; /* Use flexbox for layout */
+          align-items: center; /* Vertically center content */
+          justify-content: center; /* Horizontally center content */
+          gap: 1rem;
         }
 
         .name {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 600;
-            letter-spacing: -0.03em;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, var(--primary-color),  #66a6ff); /* Use primary in gradient */
+            font-family: 'Oswald', sans-serif; /* Bold, condensed sans-serif */
+            font-size: 4.5rem;        /* Larger font size */
+            font-weight: 700;          /* Very bold */
+            letter-spacing: 0.1em;    /* More letter spacing */
+            text-transform: uppercase; /* ALL CAPS */
+            background: linear-gradient(135deg, var(--primary-color), #4e91f7); /* Gradient background */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 0; /* Remove margin, handle with container */
+
         }
 
         .title {
             color: var(--text-secondary);
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: 500;
-            margin-bottom: 24px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
+        /* Style the icon*/
+        .name-icon {
+          font-size: 3rem; /* Adjust as needed */
+          color: var(--primary-color);
+        }
+        /* Styling the hr*/
+        .header-divider {
+          border: none; /* Remove default border */
+          height: 1px;
+          background-color: var(--border-color);
+          position: relative; /* For absolute positioning of the icon */
+          margin-bottom: 20px; /* Adjust as needed */
+          margin-top: 20px;
+        }
+        /* Style icon in the hr*/
+        .header-divider i {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: var(--background-color); /* Match background */
+          padding: 0 10px; /* Space around the icon */
+          color: var(--primary-color); /* Icon color */
+          font-size: 1.2rem; /* Adjust as needed */
+        }
+
 
         /* ========== Contact Bar ========== */
         .contact-bar {
@@ -92,6 +177,9 @@
             padding: 8px 16px;
             border-radius: 12px;
             transition: all 0.2s ease;
+              text-transform: uppercase; /* Uppercase text */
+            font-size: 0.9rem;         /* Slightly smaller font */
+            letter-spacing: 0.05em;    /* Letter spacing */
         }
 
         .contact-link:hover {
@@ -118,22 +206,26 @@
             margin-bottom: 32px;
             position: relative;
             display: inline-block;
+              text-align: center;
+              width: 100%;
         }
-
+        /* Underline effect */
         .section-title::after {
             content: '';
             position: absolute;
             bottom: -8px;
-            left: 0;
+            left: 50%;  /* Start from the center */
+            transform: translateX(-50%); /* Center the underline */
             width: 40px;
             height: 3px;
             background: var(--primary-color); /* Consistent primary color */
-            transform-origin: left;
             transition: width 0.3s ease;
+
         }
 
         .section-title:hover::after {
-            width: 100%;
+            width: 80px; /* Longer underline on hover */
+
         }
 
         /* ========== Experience Cards ========== */
@@ -144,11 +236,12 @@
             margin-bottom: 24px;
             border: 1px solid var(--border-color);
             transition: all 0.3s ease;
+            box-shadow: 0 2px 4px var(--shadow-color); /* Add a subtle shadow */
         }
 
         .experience-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px var(--shadow-color); /* Increase shadow on hover */
             border-color: var(--primary-color);
         }
 
@@ -233,8 +326,16 @@
             border-radius: 12px;
             border: 1px solid var(--border-color);
               margin-bottom: 1rem;
+            box-shadow: 0 2px 4px var(--shadow-color); /* Add shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
 
         }
+        /* Hover effect for skill categories */
+        .skill-category:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+
       .skill-category h3{
         font-size: 1.1rem;
         font-weight: 600;
@@ -303,7 +404,14 @@
         /* ========== Responsive Design ========== */
         @media (max-width: 768px) {
             .name {
-                font-size: 2.5rem;
+                font-size: 2.5rem; /* Responsive font size */
+            }
+
+            .title {
+                font-size: 1.4rem; /* Responsive font size */
+            }
+             .contact-link {
+                font-size: 0.8rem; /* Responsive font size */
             }
 
             .experience-header {
@@ -314,6 +422,9 @@
             .date {
                 font-size: 0.85rem;
             }
+              .name-icon {
+                font-size: 2.5rem;
+            }
         }
       .profile-section p{
         margin-bottom: 1rem;
@@ -323,21 +434,27 @@
 <body>
     <header>
         <div class="container">
-            <h1 class="name">Tan Vo</h1>
+            <div class="name-container">
+                <i class="ti ti-bolt name-icon"></i> <!-- Example icon: bolt -->
+                <h1 class="name">TAN VO</h1>
+            </div>
             <p class="title">Senior Cloud Engineer</p>
+            <hr class="header-divider">
+                <i class="ti ti-arrow-down"></i>
+            </hr>
             <nav class="contact-bar">
                 <a href="mailto:Tvo22@outlook.com" class="contact-link">
                     <i class="ti ti-mail"></i>
-                    Tvo22@outlook.com
+                    Email
                 </a>
                 <a href="tel:8329301387" class="contact-link">
                     <i class="ti ti-phone"></i>
-                    (832) 930-1387
+                    Phone
                 </a>
-                <span class="contact-link">
-                    <i class="ti ti-map-pin"></i>
-                    Houston, TX
-                </span>
+                <a  href="https://www.linkedin.com/in/tvo22/" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <i class="ti ti-brand-linkedin"></i>
+                    LinkedIn
+                </a>
             </nav>
         </div>
     </header>
