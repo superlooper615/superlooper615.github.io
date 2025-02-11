@@ -9,7 +9,7 @@
     <!-- External Resources -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/tabler-icons.min.css">
     <!-- Google Fonts with font-display: swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <!-- Add Oswald font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 
@@ -34,25 +34,11 @@
                 --primary-color: #007BFF;
                 --primary-hover: #0056b3;
                 --text-color: #F8FAFC;
-                --text-secondary: #A7BBC7;
+                --text-secondary: #94a3b8; /* Better readability */
                 --background-color: #0F172A;
-                --surface-color: #1E293B;
+                --surface-color: #1e293bdd; /* Semi-transparent */
                 --border-color: #475569;
                 --shadow-color: rgba(0, 0, 0, 0.3); /* Darker Shadow */
-            }
-            /* Override header for dark mode */
-            header::before {
-              background: linear-gradient(135deg,
-                  rgba(0, 123, 255, 0.25) 10%,  /* More prominent gradient */
-                  transparent 50%);
-            }
-             /* Override experience card for dark mode*/
-            .experience-card:hover {
-                box-shadow: 0 4px 6px -1px var(--shadow-color);
-            }
-            /* Override background color for dark mode*/
-            .header-divider i{
-                background-color: var(--background-color);
             }
         }
 
@@ -86,23 +72,15 @@
             text-align: center;
             border-bottom: none; /* Remove default border*/
             position: relative;
+            opacity: 0; /* Initially hidden for fade-in */
+            animation: fadeIn 0.6s ease forwards; /* Fade-in animation */
+
+        }
+        /*Remove gradient*/
+        header::before{
+          content: none;
         }
 
-        /* Skewed background effect (Optional) */
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg,
-                rgba(0, 123, 255, 0.1) 10%,
-                transparent 50%);
-            z-index: -1; /* Place behind content */
-            transform: skewY(-4deg); /* Skew the gradient */
-            transform-origin: top left;
-        }
 
         .name-container {
           display: flex; /* Use flexbox for layout */
@@ -113,13 +91,13 @@
 
         .name {
             font-family: 'Oswald', sans-serif; /* Bold, condensed sans-serif */
-            font-size: 4.5rem;        /* Larger font size */
+            font-size: 3.5rem;        /* Reduce font size */
             font-weight: 700;          /* Very bold */
             letter-spacing: 0.1em;    /* More letter spacing */
             text-transform: uppercase; /* ALL CAPS */
-            background: linear-gradient(135deg, var(--primary-color), #4e91f7); /* Gradient background */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--primary-color); /*Solid Color*/
+            background: none;
+            -webkit-text-fill-color: initial;
             margin-bottom: 0; /* Remove margin, handle with container */
 
         }
@@ -146,23 +124,23 @@
           margin-bottom: 20px; /* Adjust as needed */
           margin-top: 20px;
         }
-        /* Style icon in the hr*/
-        .header-divider i {
+        /* Style icon in the hr - REMOVED AS PER SUGGESTIONS*/
+        /*.header-divider i {
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          background-color: var(--background-color); /* Match background */
-          padding: 0 10px; /* Space around the icon */
-          color: var(--primary-color); /* Icon color */
-          font-size: 1.2rem; /* Adjust as needed */
-        }
+          background-color: var(--background-color);
+          padding: 0 10px;
+          color: var(--primary-color);
+          font-size: 1.2rem;
+        }*/
 
 
         /* ========== Contact Bar ========== */
         .contact-bar {
             display: flex;
-            gap: 24px;
+            gap: 12px; /*Reduced Gap*/
             justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 40px;
@@ -174,17 +152,19 @@
             gap: 8px;
             color: var(--text-secondary);
             text-decoration: none;
-            padding: 8px 16px;
+            padding: 8px 12px; /* Reduced padding */
             border-radius: 12px;
             transition: all 0.2s ease;
-              text-transform: uppercase; /* Uppercase text */
-            font-size: 0.9rem;         /* Slightly smaller font */
-            letter-spacing: 0.05em;    /* Letter spacing */
+            background: none; /*Removed Background*/
+            text-transform: none; /* Remove uppercase */
+
         }
 
         .contact-link:hover {
             color: var(--primary-hover);
-            background: rgba(0, 123, 255, 0.2); /* Use primary color for hover */
+            background: none; /* Removed Background on hover */
+            text-decoration: underline; /*Added underline*/
+            transform: translateY(-2px); /*Subtle Lift*/
         }
 
         /* ========== Section Styles ========== */
@@ -192,7 +172,7 @@
             margin: 60px 0;
             opacity: 0;
             transform: translateY(20px);
-            transition: 0.6s ease;
+            transition: 0.4s ease; /* Faster animation */
         }
 
         section.visible {
@@ -202,12 +182,13 @@
 
         .section-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
+            font-size: 1.8rem; /*Reduced Size*/
             margin-bottom: 32px;
             position: relative;
             display: inline-block;
               text-align: center;
               width: 100%;
+              letter-spacing: -0.5px; /*Added Letter Spacing*/
         }
         /* Underline effect */
         .section-title::after {
@@ -231,7 +212,7 @@
         /* ========== Experience Cards ========== */
         .experience-card {
             background: var(--surface-color);
-            padding: 32px;
+            padding: 24px; /*Reduced Padding*/
             border-radius: 12px;
             margin-bottom: 24px;
             border: 1px solid var(--border-color);
@@ -240,8 +221,8 @@
         }
 
         .experience-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 8px var(--shadow-color); /* Increase shadow on hover */
+            transform: translateY(-2px); /* Subtler lift */
+            box-shadow: 0 2px 8px var(--shadow-color); /*Subtle Shadow*/
             border-color: var(--primary-color);
         }
 
@@ -304,9 +285,10 @@
         }
       /* General list in experience section*/
         ul li::before {
-            content: '•'; /* Custom bullet point */
+            content: '›'; /* Custom bullet point */
+            font-weight: 700; /*Bold*/
             position: absolute;
-            left: 0;
+            left: -4px; /*Adjusted Position*/
             top: 0;  /* Align with the top of the text */
             color: var(--primary-color); /* Use primary color for bullets */
             font-size: 1.2rem; /* Adjust size as needed */
@@ -316,30 +298,33 @@
         /* ========== Skill Categories ========== */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /*Adjusted minimum width*/
+            gap: 24px; /*Increased Gap*/
         }
 
         .skill-category {
-            background: var(--surface-color);
-            padding: 24px;
+            background: transparent; /*Removed Background*/
+            padding: 16px; /*Reduced Padding*/
             border-radius: 12px;
-            border: 1px solid var(--border-color);
+            /*border: 1px solid var(--border-color);*/
               margin-bottom: 1rem;
-            box-shadow: 0 2px 4px var(--shadow-color); /* Add shadow */
+            /*box-shadow: 0 2px 4px var(--shadow-color);*/ /* Add shadow */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: none; /*Removed Shadow*/
+            border: none; /*Removed Border*/
 
         }
         /* Hover effect for skill categories */
         .skill-category:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 8px var(--shadow-color);
+            /*transform: translateY(-4px);
+            box-shadow: 0 4px 8px var(--shadow-color);*/
+            transform: none; /*Removed Hover*/
         }
 
       .skill-category h3{
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
+        font-size: 1rem; /*Reduced font size*/
+        font-weight: 700; /*Reduced to two font weights 400 and 700*/
+        margin-bottom: 1rem; /*Increased bottom margin*/
         color: var(--primary-color);
       }
 
@@ -351,9 +336,10 @@
         }
 
         .skill-item::before {
-            content: '•';
+            content: '›'; /* Modern Indicator */
+            font-weight: 700;
             position: absolute;
-            left: 0;
+            left: -4px;
             top: 0px;
             color: var(--primary-color);
             font-size: 1.2rem;
@@ -364,12 +350,15 @@
 
         .education-certification-item{
           margin-bottom: 1rem;
-          padding-left: 24px; /*Consistent with other sections*/
-          border-left: 3px solid var(--primary-color);
+          /*padding-left: 24px; Consistent with other sections*/
+          border-left: 2px solid var(--primary-color); /* Thinner border */
+          margin-left: 8px;  /*Reduced Margin*/
+          padding-left: 16px; /*Reduced Padding*/
         }
         .education-certification-item h4{
           margin-bottom: 0.2rem;
           font-size: 1rem;
+          font-weight: 700; /*Reduced to two font weights 400 and 700*/
         }
 
         /* ========== Footer Styles ========== */
@@ -380,17 +369,6 @@
             font-size: 0.9rem;
         }
 
-        /* ========== Animations ========== */
-        @keyframes fadeSlide {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
       /*Limit line length*/
       .profile-section p {
           max-width: 70ch; /*  ch unit represents the width of the "0" (zero) character */
@@ -422,6 +400,22 @@
                 font-size: 2.5rem;
             }
         }
+        /*Extra responsive design rule*/
+        @media (max-width: 480px){
+          .name{
+            font-size: 2.25rem;
+          }
+        }
+
+        /*Fade in animation*/
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
     </style>
 </head>
@@ -434,7 +428,7 @@
             </div>
             <p class="title">Senior Cloud Engineer</p>
             <hr class="header-divider">
-                <i class="ti ti-arrow-down" aria-hidden="true"></i>
+                <!--<i class="ti ti-arrow-down" aria-hidden="true"></i>-->
             </hr>
             <nav class="contact-bar">
                 <a href="#" class="contact-link" id="email-link">
@@ -683,6 +677,12 @@
             event.preventDefault();
             const phone = '8329301387';
             window.location.href = 'tel:' + phone;
+        });
+
+        // --- Header Fade-In ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            header.style.opacity = 1; // Make header visible after DOM is loaded
         });
 
     </script>
