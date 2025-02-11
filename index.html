@@ -26,11 +26,18 @@
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4em;
+            font-size: 4em; /* Initial size - we'll adjust this */
             margin-bottom: 0.2em;
             font-weight: 400;
             /* Regular weight */
             letter-spacing: 1px;
+        }
+        /*New style*/
+        .name-header {
+            font-size: 6em; /* Much larger size */
+            margin-bottom: 0.1em; /* Reduce bottom margin */
+            font-style: italic; /* Add italic style */
+            font-weight: bold;  /* Add bold style */
         }
 
         h2 {
@@ -67,32 +74,6 @@
         .image-container {
             text-align: center;
             margin-top: 2em;
-        }
-
-        .ear-image-container {
-            position: absolute;
-            top: 100px;  /* Adjusted vertical position */
-            right: 30px; /* Adjusted horizontal position */
-            width: 200px; /* Adjusted width */
-        }
-        .ear-image-container img {
-          width: 100%;
-          height: auto;
-        }
-
-        .annotation {
-            text-align: center;
-            margin-top: -40px;
-            font-style: italic;
-            font-family: 'Lora', serif;
-            transform: rotate(-5deg);
-        }
-
-        .annotation:before {
-            content: "↑";
-            font-size: larger;
-            display: block;
-
         }
 
         ul {
@@ -147,31 +128,14 @@
         .project-section {
             margin-bottom: 2em;
         }
-        .rotated-text {
-            position: absolute;
-            bottom: 25px;  /*Adjusted vertical*/
-            right: 70px; /* Adjusted horizontal */
-            transform: rotate(-5deg);
-            font-style: italic;
-            font-family: 'Lora', serif;
-            font-size: 1.1em; /* Adjust size as needed*/
-        }
-        .rotated-text:before{
-            content: "↑";
-            font-size: larger;
-            display: block;
-           margin-left: -20px;
-
-        }
-
 
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Tan Vo</h1>
-        <p class="pronunciation">/tæn voʊ/ (English) - /tan vɔ̌/</p>
+        <h1 class = "name-header">Hi, I'm Tân Võ</h1>
+        <p class="pronunciation">/tən vɔ̌/</p>
 
         <h2>Featured Projects</h2>
 
@@ -202,7 +166,7 @@
             <h3>Resumes</h3>
             <p>Examples of resumes</p>
             <ul class="project-list">
-                <li><a href="marissa-bosley-resume.html">Marissa Bosley Resume</a>: Example Resume.</li>
+                <li><a href="marissa-bosley-resume.html">Marissa Bosley Resume</a>: Example Resume.</li>>
                 <li><a href="tan-vo-resume.html">Tan Vo Resume</a>: Example resume.</li>
             </ul>
         </div>
