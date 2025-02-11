@@ -342,29 +342,20 @@
         margin-bottom: 0.5rem;
         color: var(--primary-color);
       }
-      /* Skill Section*/
-        .skill-category ul li {
-            position: relative;
-            padding-left: 24px; /* Space for the custom bullet */
-            margin-bottom: 12px;
-            opacity: 0;
-            transform: translateX(-10px);
-            transition: all 0.4s ease;
-            color: var(--text-color); /* Ensure text color is consistent */
 
+        .skill-item {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            color: var(--text-color);
         }
-      /* Skill Section*/
-        .skill-category ul.animated li {
-            opacity: 1;
-            transform: translateX(0);
-        }
-      /* Skill Section*/
-        .skill-category ul li::before {
-            content: '•'; /* Use a bullet character */
+
+        .skill-item::before {
+            content: '•';
             position: absolute;
             left: 0;
             top: 0px;
-            color: var(--primary-color);  /* Consistent primary color for bullets */
+            color: var(--primary-color);
             font-size: 1.2rem;
             line-height: 1.6;
         }
@@ -400,6 +391,11 @@
                 transform: translateY(0);
             }
         }
+      /*Limit line length*/
+      .profile-section p {
+          max-width: 70ch; /*  ch unit represents the width of the "0" (zero) character */
+          margin-bottom: 1rem;
+      }
 
         /* ========== Responsive Design ========== */
         @media (max-width: 768px) {
@@ -426,33 +422,31 @@
                 font-size: 2.5rem;
             }
         }
-      .profile-section p{
-        margin-bottom: 1rem;
-      }
+
     </style>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="name-container">
-                <i class="ti ti-bolt name-icon"></i> <!-- Example icon: bolt -->
+                <i class="ti ti-bolt name-icon" aria-hidden="true"></i> <!-- Example icon: bolt -->
                 <h1 class="name">TAN VO</h1>
             </div>
             <p class="title">Senior Cloud Engineer</p>
             <hr class="header-divider">
-                <i class="ti ti-arrow-down"></i>
+                <i class="ti ti-arrow-down" aria-hidden="true"></i>
             </hr>
             <nav class="contact-bar">
-                <a href="mailto:Tvo22@outlook.com" class="contact-link">
-                    <i class="ti ti-mail"></i>
+                <a href="#" class="contact-link" id="email-link">
+                    <i class="ti ti-mail" aria-hidden="true"></i>
                     Email
                 </a>
-                <a href="tel:8329301387" class="contact-link">
-                    <i class="ti ti-phone"></i>
+                <a href="#" class="contact-link" id="phone-link">
+                    <i class="ti ti-phone" aria-hidden="true"></i>
                     Phone
                 </a>
                 <a  href="https://www.linkedin.com/in/tvo22/" class="contact-link" target="_blank" rel="noopener noreferrer">
-                    <i class="ti ti-brand-linkedin"></i>
+                    <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
                     LinkedIn
                 </a>
             </nav>
@@ -571,70 +565,58 @@
                 <div class="skills-grid">
                     <div class="skill-category">
                         <h3>Cloud Platforms & Services</h3>
-                        <ul>
-                            <li class="skill-item">Google Cloud Platform (GCP)</li>
-                            <li class="skill-item">Amazon Web Services (AWS)</li>
-                            <li class="skill-item">Microsoft Azure</li>
-                            <li class="skill-item">Healthcare Data Engine (HDE)</li>
-                            <li class="skill-item">Kubernetes (GKE, EKS, AKS)</li>
-                            <li class="skill-item">Serverless Computing</li>
-                            <li class="skill-item">Infrastructure as Code (IaC)</li>
-                        </ul>
+                            <div class = "skill-item">Google Cloud Platform (GCP)</div>
+                            <div class = "skill-item">Amazon Web Services (AWS)</div>
+                            <div class = "skill-item">Microsoft Azure</div>
+                            <div class = "skill-item">Healthcare Data Engine (HDE)</div>
+                            <div class = "skill-item">Kubernetes (GKE, EKS, AKS)</div>
+                            <div class = "skill-item">Serverless Computing</div>
+                            <div class = "skill-item">Infrastructure as Code (IaC)</div>
                     </div>
 
                     <div class="skill-category">
                         <h3>DevOps & Automation</h3>
-                        <ul>
-                            <li class="skill-item">CI/CD Pipelines</li>
-                            <li class="skill-item">Terraform</li>
-                            <li class="skill-item">Ansible</li>
-                            <li class="skill-item">Docker</li>
-                            <li class="skill-item">Git</li>
-                            <li class="skill-item">Configuration Management</li>
-                            <li class="skill-item">Monitoring & Logging</li>
-                        </ul>
+                            <div class = "skill-item">CI/CD Pipelines</div>
+                            <div class = "skill-item">Terraform</div>
+                            <div class = "skill-item">Ansible</div>
+                            <div class = "skill-item">Docker</div>
+                            <div class = "skill-item">Git</div>
+                            <div class = "skill-item">Configuration Management</div>
+                            <div class = "skill-item">Monitoring & Logging</div>
                     </div>
 
                     <div class="skill-category">
                         <h3>Data Engineering & Analytics</h3>
-                        <ul>
-                            <li class="skill-item">ETL Pipelines</li>
-                            <li class="skill-item">Data Warehousing (BigQuery)</li>
-                            <li class="skill-item">Data Governance</li>
-                            <li class="skill-item">Data Security</li>
-                            <li class="skill-item">SQL & Data Analysis</li>
-                        </ul>
+                            <div class = "skill-item">ETL Pipelines</div>
+                            <div class = "skill-item">Data Warehousing (BigQuery)</div>
+                            <div class = "skill-item">Data Governance</div>
+                            <div class = "skill-item">Data Security</div>
+                            <div class = "skill-item">SQL & Data Analysis</div>
                     </div>
 
                     <div class="skill-category">
                         <h3>Scripting & Programming</h3>
-                        <ul>
-                            <li class="skill-item">Python</li>
-                            <li class="skill-item">Bash</li>
-                            <li class="skill-item">PowerShell</li>
-                            <li class="skill-item">YAML</li>
-                            <li class="skill-item">JSON</li>
-                        </ul>
+                            <div class = "skill-item">Python</div>
+                            <div class = "skill-item">Bash</div>
+                            <div class = "skill-item">PowerShell</div>
+                            <div class = "skill-item">YAML</div>
+                            <div class = "skill-item">JSON</div>
                     </div>
                     <div class="skill-category">
                       <h3>Networking</h3>
-                      <ul>
-                        <li class="skill-item">TCP/IP</li>
-                        <li class="skill-item">VPN</li>
-                        <li class="skill-item">DNS</li>
-                        <li class="skill-item">Load Balancing</li>
-                        <li class="skill-item">Firewalls</li>
-                      </ul>
+                        <div class = "skill-item">TCP/IP</div>
+                        <div class = "skill-item">VPN</div>
+                        <div class = "skill-item">DNS</div>
+                        <div class = "skill-item">Load Balancing</div>
+                        <div class = "skill-item">Firewalls</div>
                     </div>
                       <div class="skill-category">
                         <h3>Security</h3>
-                        <ul>
-                          <li class="skill-item">Identity and Access Management (IAM)</li>
-                          <li class="skill-item">Vulnerability Management</li>
-                          <li class="skill-item">Security Auditing</li>
-                          <li class="skill-item">Compliance (HIPAA, FedRAMP)</li>
-                        </ul>
-                      </div>
+                          <div class = "skill-item">Identity and Access Management (IAM)</div>
+                          <div class = "skill-item">Vulnerability Management</div>
+                          <div class = "skill-item">Security Auditing</div>
+                          <div class = "skill-item">Compliance (HIPAA, FedRAMP)</div>
+                    </div>
                 </div>
             </section>
           <!-- Education and Certification Section -->
@@ -687,6 +669,22 @@
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
+
+        // --- Email and Phone Obfuscation ---
+        document.getElementById('email-link').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default action
+            const user = 'Tvo22';
+            const domain = 'outlook.com';
+            const email = user + '@' + domain;
+            window.location.href = 'mailto:' + email;
+        });
+
+        document.getElementById('phone-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            const phone = '8329301387';
+            window.location.href = 'tel:' + phone;
+        });
+
     </script>
 </body>
 </html>
