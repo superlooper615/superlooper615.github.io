@@ -50,6 +50,8 @@ header h1 {
 .contact-info a {
     color: white;
     text-decoration: none;
+    display: block; /* Make links block-level for spacing */
+    margin-bottom: 5px;
 }
 
 .section {
