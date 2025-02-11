@@ -7,139 +7,142 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container hero-content">
             <h1>Tan Vo</h1>
             <p class="title">Senior Cloud Engineer</p>
-            <p class="summary">Highly motivated and results-oriented Senior Cloud Engineer with 7+ years of experience in designing, deploying, and managing cloud infrastructure and applications. Proven expertise in the Google Cloud Platform, Healthcare Data Engine, Kubernetes, CI/CD, and DevOps practices. Skilled in automation, data analysis, and project management. Passionate about building high-performance cloud solutions that drive business value.</p>
             <div class="contact-info">
-                <p>Houston, TX</p>
+                <a href="mailto:Tvo22@outlook.com">Tvo22@outlook.com</a>
+                <a href="tel:8329301387">(832) 930-1387</a>
+                <span>Houston, TX</span>
             </div>
         </div>
     </header>
 
-    <section id="about" class="section">
+    <section id="about" class="section reveal">
         <div class="container">
             <h2>About Me</h2>
-            <p>With over 7 years of experience as a Senior Cloud Engineer, I specialize in crafting robust and scalable cloud solutions. My expertise lies in the Google Cloud Platform, particularly with services like Healthcare Data Engine, Kubernetes, and DevOps practices. I am passionate about automation, data-driven decision-making, and project management, always striving to deliver high-performance cloud infrastructures that directly contribute to business success. My background includes significant work in the healthcare sector, focusing on enhancing data management and operational efficiency through innovative cloud technologies.</p>
+            <p>Highly motivated and results-oriented Senior Cloud Engineer with 7+ years of experience in designing, deploying, and managing cloud infrastructure and applications. Proven expertise in the Google Cloud Platform, Healthcare Data Engine, Kubernetes, CI/CD, and DevOps practices. Skilled in automation, data analysis, and project management. Passionate about building high-performance cloud solutions that drive business value.</p>
         </div>
     </section>
 
-    <section id="experience" class="section bg-light">
+    <section id="experience" class="section reveal">
         <div class="container">
-            <h2>Work Experience</h2>
+            <h2>Experience</h2>
             <div class="experience-item">
                 <h3>Senior Cloud Engineer Consultant</h3>
-                <p class="company">Quantiphi Inc. | Uniformed Services University of the Health Sciences</p>
-                <p class="date">09/2021 - 08/2024</p>
+                <span class="company">Quantiphi Inc.</span>  <!-- Main Company -->
+                <span class="date">09/2021 - 08/2024</span>
                 <ul>
-                    <li>Automated data sharing using FedRAMP compliant Terraform templates, enhancing data security and reducing data sharing time by 30%.</li>
-                    <li>Established a data governance strategy resulting in 99.99% data availability using Python and Shell scripts.</li>
-                    <li>Developed repeatable architecture for data ingestion, reducing processing time by 20%.</li>
-                    <li>Developed scripts to ingest 25 TB of DICOM datasets 50% faster than estimated.</li>
-                    <li>Recommended security best practices, reducing security vulnerabilities by 15%.</li>
-                    <li>Automated metadata bucket tagging, reducing manual tagging time by 80%.</li>
+                    <li><strong>Uniformed Services University of the Health Sciences (Client Project):</strong>
+                        <ul>
+                            <li>Automated data sharing and enhanced data security using FedRAMP compliant, customizable Terraform templates, resulting in a 30% reduction in data sharing time.</li>
+                            <li>Established a data governance strategy, resulting in a 99.99% data availability rate.</li>
+                            <li>Developed a repeatable solution architecture for data ingestion, resulting in a 20% decrease in data processing time.</li>
+                            <li>Developed Python and shell scripts to ingest 25 TB of DICOM datasets 50% faster than estimated.</li>
+                            <li>Recommended security best practices, reducing security vulnerabilities by 15%.</li>
+                            <li>Automated metadata bucket tagging, reducing manual tagging time by 80%.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Highmark Health (Client Project):</strong>
+                        <ul>
+                            <li>Developed protocols for secure deployment and maintenance of AI/ML models, ensuring 99.9% SLA.</li>
+                            <li>Collaborated to improve system performance by 10% and reduce infrastructure costs by 5%.</li>
+                            <li>Developed an HDE operation run book, saving 20% onboarding time.</li>
+                            <li>Architected scalable data pipelines, saving 80 hours per data ingestion cycle.</li>
+                            <li>Automated developer onboarding using Terraform, saving 20% onboarding time.</li>
+                        </ul>
+                    </li>
+                     <li><strong>Cityblock Health (Client Project):</strong>
+                        <ul>
+                            <li>Mitigated Terraform state drift with CI/CD, saving an estimated $10,000 per month.</li>
+                            <li>Built HIPAA compliant ETL pipelines, saving an estimated $15,000 per data ingestion cycle.</li>
+                            <li>Streamlined knowledge transfer, saving an estimated $5,000 per new team member onboarding.</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
-            <div class="experience-item">
-                <h3>Cloud Engineer</h3>
-                <p class="company">Highmark Health</p>
-                <p class="date">09/2021 - 08/2024</p> <p>(Overlapping dates are likely a typo in resume, assuming this is meant to be prior to Quantiphi. Adjust dates if needed for accuracy)</p>
-                <ul>
-                    <li>Developed protocols for secure deployment and maintenance of AI/ML models, ensuring 99.9% SLA.</li>
-                    <li>Collaborated to identify infrastructure bottlenecks, improving system performance by 10% and reducing infrastructure costs by 5%.</li>
-                    <li>Developed HDE operation run book, saving 20% onboarding time.</li>
-                    <li>Architected scalable data pipelines, saving 80 hours per data ingestion cycle.</li>
-                    <li>Automated developer onboarding using Terraform, saving 20% onboarding time.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>Cloud Engineer</h3>
-                <p class="company">Cityblock Health</p>
-                <p class="date">03/2021 - 09/2021</p>
-                <ul>
-                    <li>Mitigated Terraform state drift with CI/CD, saving $10,000/month and 40 hours/month in troubleshooting.</li>
-                    <li>Built HIPAA compliant ETL pipelines, saving $15,000 per data ingestion cycle.</li>
-                    <li>Streamlined knowledge transfer with operation run book, saving $5,000 per new team member onboarding.</li>
-                </ul>
-            </div>
+
             <div class="experience-item">
                 <h3>Cloud Engineer Lead Contractor</h3>
-                <p class="company">Ncontracts Inc.</p>
-                <p class="date">03/2021 - 09/2021</p> <p>(Overlapping dates, assuming this is prior to Cityblock. Adjust dates if needed for accuracy)</p>
+                <span class="company">Ncontracts Inc.</span>
+                <span class="date">03/2021 - 09/2021</span>
                 <ul>
-                    <li>Designed and deployed a hybrid environment, increasing system availability by 15% and resiliency.</li>
-                    <li>Designed architecture including CI/CD.</li>
+                    <li>Designed and deployed a hybrid environment, increasing system availability by 15%.</li>
+                    <li>Designed an architecture including infrastructure components such as access, networking, security, CI/CD.</li>
                 </ul>
             </div>
+            
             <div class="experience-item">
                 <h3>Cloud Engineer</h3>
-                <p class="company">University of Houston</p>
-                <p class="date">10/2017 - 03/2021</p>
+                <span class="company">University of Houston</span>
+                <span class="date">10/2017 - 03/2021</span>
                 <ul>
-                    <li>Configured centralized security patching with Ansible, ensuring 100% server up-to-date within a week.</li>
-                    <li>Implemented ELK stack for network logging, enhancing network visibility.</li>
-                    <li>Trained users on security topics, increasing cybersecurity awareness from 47% to 98%.</li>
+                   <li>Configured a centralized security patching solution using Ansible, ensuring 100% server uptime.</li>
+                   <li>Implemented ELK stack, enhanced network visibility.</li>
+                   <li>Trained users on security topics, heightening cybersecurity awareness from 47% to 98%.</li>
                 </ul>
             </div>
-             <div class="experience-item">
+
+            <div class="experience-item">
                 <h3>System Administrator</h3>
-                <p class="company">Pink Zebra Home</p>
-                <p class="date">04/2015 - 07/2017</p>
+                <span class="company">Pink Zebra Home</span>
+                <span class="date">04/2015 - 07/2017</span>
                 <ul>
-                    <li>Collaborated on product picking system rollout, decreasing delivery time to 1 day.</li>
-                    <li>Monitored and set up network devices, expanding coverage by 30%.</li>
+                    <li>Collaborated on system rollouts to improve operational efficiency.</li>
+                    <li>Managed and configured network infrastructure.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills" class="section reveal">
+    <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>Cloud Platforms: Expertise in AWS, Azure, and GCP core services, pricing, and best practices</li>
+                    <li>Infrastructure & Automation: Expertise in IaC tools (Terraform, Ansible, Chef)</li>
+                    <li>Networking: Strong grasp of cloud networking concepts</li>
+                    <li>Security: Solid knowledge of cloud security principles</li>
+                    <li>Linux Administration: Familiarity with Linux administration tasks</li>
+                    <li>Scripting: Proficiency in scripting languages (Python, Bash, PowerShell)</li>
+                    <li>Containers & Orchestration: Knowledge of containerization (Docker) and container orchestration (Kubernetes)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Soft Skills</h3>
+                <ul>
+                    <li>Leadership: Mentoring junior engineers and guiding cloud initiatives</li>
+                    <li>Adaptability & Learning: Continuous learning in the evolving cloud landscape</li>
+                    <li>Time Management & Prioritization: Effective management of multiple projects</li>
                 </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Technical Skills</h3>
-                    <ul>
-                        <li>Cloud Platforms: AWS, Azure, GCP</li>
-                        <li>IaC Tools: Terraform, Ansible, Chef</li>
-                        <li>Networking: Virtual Networks, Subnets, Security Groups, Firewalls</li>
-                        <li>Security: Access Control, Encryption, Incident Response</li>
-                        <li>Linux Administration</li>
-                        <li>Scripting: Python, Bash, PowerShell</li>
-                        <li>Containers & Orchestration: Docker, Kubernetes</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Soft Skills</h3>
-                    <ul>
-                        <li>Leadership & Mentoring</li>
-                        <li>Adaptability & Learning</li>
-                        <li>Time Management & Prioritization</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="section bg-light">
+    <section id="education" class="section reveal">
         <div class="container">
             <h2>Education & Certifications</h2>
             <div class="education-item">
                 <h3>University of Houston</h3>
-                <p class="degree">Bachelor's in Computer Information Systems</p>
-                <p class="date">08/2017 - 05/2020</p>
+                <span class="degree">Bachelor's in Computer Information Systems</span>
+                <span class="date">08/2017 - 05/2020</span>
             </div>
             <div class="certification-item">
                 <h3>AWS Certified Solutions Architect - Associate</h3>
-                <p class="date">07/2019</p>
+                <span class="date">07/2019</span>
             </div>
-            <div class="certification-item">
+             <div class="certification-item">
                 <h3>GCP Certified - Cloud Architect - Professional</h3>
-                <p class="date">06/2022</p>
+                <span class="date">06/2022</span>
             </div>
         </div>
     </section>
@@ -149,25 +152,20 @@
             <p>© 2025 Tan Vo. All rights reserved.</p>
         </div>
     </footer>
+
     <script>
-        // Intersection Observer for scroll animations
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.section');
-            const options = { threshold: 0.1 };
-        
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, options);
-        
-            sections.forEach(section => {
-                observer.observe(section);
+    document.addEventListener('DOMContentLoaded', function() {
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
             });
-        });
-        </script>
-        
+        }, { threshold: 0.1 });
+
+        reveals.forEach(element => observer.observe(element));
+    });
+    </script>
 </body>
 </html>
