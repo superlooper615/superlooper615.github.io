@@ -1,96 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resumes & Projects</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>Tan Vo</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;700&display=swap');
+
         body {
-            font-family: 'Inter', sans-serif; /* Using Inter font, like Sonnet */
-            line-height: 1.7; /* Slightly increased line height for better readability */
-            color: #333; /* Darker text color for better contrast */
-            background-color: #fff; /* White background - cleaner and more modern */
+            font-family: 'Lora', serif;
             margin: 0;
-            padding: 40px 20px; /* Increased padding for more whitespace */
-            text-align: center; /* Center alignment */
-            display: flex; /* Use flexbox for vertical centering on larger screens */
-            flex-direction: column;
-            min-height: 100vh; /* Ensure full height for vertical centering */
+            padding: 0;
+            background-color: #f8f6f1;
+            color: #333;
+            line-height: 1.6;
         }
 
-        main {
-            max-width: 800px; /* Limit content width for better readability on larger screens */
-            margin: 0 auto; /* Center the main content block */
-            padding: 30px; /* Add padding within the main content area */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         h1 {
-            color: #2e4369; /*  Darker blue/grey heading color - more sophisticated */
-            margin-bottom: 20px;
-            font-size: 2.5em; /* Larger heading size */
-            font-weight: 600; /* Semi-bold font weight for headings */
+            font-family: 'Playfair Display', serif;
+            font-size: 4em;
+            margin-bottom: 0.2em;
+            font-weight: 400;
+            /* Regular weight */
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            font-size: 1.8em;
+            margin-bottom: 1em;
+            font-style: italic;
+            font-weight: normal;
         }
 
         p {
-            color: #555; /* Slightly lighter paragraph text */
-            margin-bottom: 40px; /* Increased margin below paragraphs */
-            font-size: 1.1em; /* Slightly larger paragraph text */
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 40px; /* Increased margin below lists */
-        }
-
-        li {
-            margin-bottom: 15px; /* Increased spacing between list items */
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
         }
 
         a {
-            display: inline-block;
-            padding: 12px 25px; /* Adjusted button padding */
-            background-color: #007bff; /*  Primary blue color - similar to Sonnet's accents */
-            color: white;
+            color: #0077cc;
             text-decoration: none;
-            border-radius: 8px; /* Slightly more rounded buttons */
-            transition: background-color 0.3s ease;
-            margin: 5px;
-            font-weight: 500; /* Slightly bolder button text */
         }
 
         a:hover {
-            background-color: #0056b3; /* Darker blue on hover */
+            text-decoration: underline;
         }
 
-        footer {
-            margin-top: auto; /* Push footer to the bottom */
-            padding-top: 30px;
-            border-top: 1px solid #eee; /* Light border to separate footer */
-            color: #777; /* Lighter footer text color */
-            font-size: 0.9em;
+        .pronunciation {
+            font-style: italic;
+            color: #666;
+            font-family: 'Lora', serif;
+            font-size: 1.3em;
+            margin-top: -18px;
+            margin-bottom: 30px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 2em;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0px;
+        }
+
+        .annotation {
+            text-align: center;
+            margin-top: -40px;
+            font-style: italic;
+            font-family: 'Lora', serif;
+            transform: rotate(-5deg);
+        }
+
+        .annotation:before {
+            content: "↑";
+            font-size: larger;
+            display: block;
+
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 35px;
+            margin-top: 10px;
+        }
+
+        ul.project-links {
+            margin-bottom: 0px;
+        }
+
+        ul li {
+            display: inline;
+            padding: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+            font-family: 'Lora', serif;
+        }
+
+        nav {
+            margin-top: 25px;
+        }
+
+        .project-links li {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        .project-list {
+            list-style: disc;
+            margin-left: 20px;
+            padding-left: 0;
+        }
+
+        .project-list li {
+            margin-bottom: .8em;
+        }
+        .project-list strong {
+            display: block; /* Make the title a block element */
+            margin-bottom: 0.2em; /* Add some space below the title */
+        }
+
+        /* Underlined text style */
+        .underlined {
+            text-decoration: underline;
+        }
+        .project-section {
+            margin-bottom: 2em;
         }
     </style>
 </head>
+
 <body>
-    <main>
-        <h1>Welcome to My Resumes & Projects</h1>
-        <p>Explore my work and choose a file to view:</p>
-        <ul>
-            <li><a href="tan-vo-resume.html">Tan Vo - Senior Cloud Engineer Resume</a></li>
-            <li><a href="marissa-bosley-resume.html">Marissa Bosley - Attorney Resume</a></li>
-            <li><a href="DEA-C01-flashcards.html">DEA-C01 Flashcards</a></li>
-            <li><a href="DEA-C01_from_csv.html">DEA-C01 Flashcards (CSV Version)</a></li>
-            <li><a href="SAP-C02-flashcards.html">SAP-C02 Flashcards</a></li>
-            <li><a href="SAP-C02_from_csv.html">SAP-C02 Flashcards (CSV Version)</a></li>
-            <li><a href="index.html">Index (Landing Page)</a></li>
-        </ul>
-    </main>
-    <footer>
-        <p>© 2025 My Resumes. Hosted on GitHub Pages.</p>
-    </footer>
+    <div class="container">
+        <h1>Tan Vo</h1>
+        <p class="pronunciation">/tæn voʊ/ (English) - /tan vɔ̌/</p>
+
+        <h2>Featured Projects</h2>
+
+        <div class="project-section">
+            <h3>AWS Certification Flashcards & Data Processing</h3>
+            <p>This section showcases projects related to AWS certification preparation, including flashcards and data
+                transformation tools.</p>
+            <ul class="project-list">
+                <li>
+                    <a href="DEA-C01-flashcards.html"><strong>DEA-C01 Flashcards</strong></a>
+                    Interactive flashcards for the AWS Certified Data Engineer Associate (DEA-C01) exam.
+                </li>
+                <li>
+                    <a href="SAP-C02-flashcards.html"><strong>SAP-C02 Flashcards</strong></a>
+                    Flashcards for the AWS Certified Solutions Architect - Professional (SAP-C02) exam.
+                </li>
+                <li>
+                    <a href="DEA-C01_from_csv.html"><strong>DEA-C01 Data Processor</strong></a>
+                    A tool to process and transform data related to the DEA-C01 certification.
+                </li>
+                <li>
+                    <a href="SAP-C02_from_csv.html"><strong>SAP-C02 Data Processor</strong></a>
+                    Data processing and transformation utilities for SAP-C02.
+                </li>
+            </ul>
+        </div>
+        <div class="project-section">
+            <h3>Resumes</h3>
+            <p>Examples of resumes</p>
+            <ul class="project-list">
+                <li><a href="marissa-bosley-resume.html">Marissa Bosley Resume</a>: Example Resume.</li>
+                <li><a href="tan-vo-resume.html">Tan Vo Resume</a>: Example resume.</li>
+            </ul>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Back to Top</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 </body>
+
 </html>
