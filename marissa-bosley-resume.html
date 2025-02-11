@@ -182,7 +182,7 @@
 
         .contact-link:hover {
             color: var(--primary-hover);
-            background: rgba(0, 64, 128, 0.15); /* Reduced opacity hover background - Navy Blue */
+            background: rgba(0, 64, 128, 0.10); /* Reduced opacity hover background - Navy Blue */
         }
 
         /* ========== Section Styles ========== */
@@ -222,7 +222,7 @@
         }
 
         .section-title:hover::after {
-            width: 60px; /* Reduced hover width */
+            width: 45px; /* Reduced hover width - adjusted from 60px to 45px */
 
         }
 
@@ -306,10 +306,11 @@
             content: '•';
             position: absolute;
             left: 0;
-            top: 0;
+            top: 0; /* Changed from 'top: 0px;' to 'top: 0;' */
             color: var(--primary-color);
             font-size: 1rem;
             line-height: 1.7; /* Match body line-height */
+            transform: translateY(0%); /* Removed vertical alignment attempt - keeping top alignment for bullet points in lists */
         }
 
         /* ========== Skill Categories ========== */
@@ -354,10 +355,10 @@
             content: '•';
             position: absolute;
             left: 0;
-            top: 0px;
+            top: 50%; /* Vertically center bullet points */
+            transform: translateY(-50%); /* Vertically center bullet points */
             color: var(--primary-color);
             font-size: 1rem;
-            line-height: 1.7; /* Match body line-height */
         }
 
         /* ========== Education and Certification Section ==========*/
@@ -518,13 +519,17 @@
                     <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
                     LinkedIn
                 </a>
+                <a  href="YOUR_GITHUB_PAGES_URL_HERE" class="contact-link" target="_blank" rel="noopener noreferrer">  <!-- ADD GITHUB PAGES URL HERE -->
+                    <i class="ti ti-world" aria-hidden="true"></i>
+                    Website
+                </a>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main> <!-- Main element starts here, wrapping all sections -->
         <div class="container">
-            <!-- About Section -->
+            <!-- About Section - Moved to be first -->
             <section class="about profile-section">
                 <h2 class="section-title">Professional Profile</h2>
                 <p>
@@ -621,6 +626,17 @@
                     </ul>
                 </div>
 
+            </section>
+
+            <!-- Bar Admissions Section - New Section -->
+            <section id="bar-admissions">
+                <h2 class="section-title">Bar Admissions</h2>
+                <div class="education-certification-item">
+                    <h4>State Bar of Texas</h4>
+                    <p><em>Bar Number: [Your Texas Bar Number]</em></p> <!- Replace with actual Bar Number -->
+                    <p><em>Admitted: [Date of Admission]</em></p> <!- Replace with actual Admission Date -->
+                </div>
+                <!-- Add more jurisdictions if admitted elsewhere -->
             </section>
 
             <!-- Education Section -->
@@ -724,7 +740,7 @@
             </section>
 
         </div>
-    </main>
+    </main> <!-- Main element closing tag -->
 
     <footer>
       <div class="container">
