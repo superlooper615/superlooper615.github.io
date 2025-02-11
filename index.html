@@ -9,7 +9,7 @@
     <!-- External Resources -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/tabler-icons.min.css">
     <!-- Google Fonts with font-display: swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
     <!-- Add Oswald font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 
@@ -19,12 +19,12 @@
             /* Light Mode Colors */
             --primary-color: #007BFF;       /* Electric Blue */
             --primary-hover: #0056b3;     /* Darker Electric Blue */
-            --text-color: #212529;       /* Dark Gray */
+            --text-color: #343a40;       /* Slightly Darker Gray for body text */
             --text-secondary: #6c757d;    /* Medium Gray */
-            --background-color: #ffffff;   /* White */
-            --surface-color: #f8f9fa;    /* Light Gray */
-            --border-color: #dee2e6;      /* Lighter Gray */
-            --shadow-color: rgba(0, 0, 0, 0.1); /* Subtle Shadow */
+            --background-color: #f8f9fa;   /* Very Light Gray Background */
+            --surface-color: #ffffff;    /* White for cards/surfaces */
+            --border-color: #e0e0e0;      /* Even Lighter Gray Border */
+            --shadow-color: rgba(0, 0, 0, 0.08); /* Very Subtle Shadow */
         }
 
         /* ========== Dark Mode Color Scheme (using prefers-color-scheme) ========== */
@@ -35,28 +35,26 @@
                 --primary-hover: #0056b3;
                 --text-color: #F8FAFC;
                 --text-secondary: #A7BBC7;
-                --background-color: #0F172A;
-                --surface-color: #1E293B;
+                --background-color: #1E293B; /* Darker Background */
+                --surface-color: #2D3748; /* Darker Surface */
                 --border-color: #475569;
                 --shadow-color: rgba(0, 0, 0, 0.3); /* Darker Shadow */
             }
-            /* Override header for dark mode */
+            /* Override header for dark mode - subtle gradient */
             header::before {
               background: linear-gradient(135deg,
-                  rgba(0, 123, 255, 0.25) 10%,  /* More prominent gradient */
+                  rgba(0, 123, 255, 0.15) 10%,
                   transparent 50%);
             }
              /* Override experience card for dark mode*/
             .experience-card:hover {
-                box-shadow: 0 4px 6px -1px var(--shadow-color);
+                box-shadow: 0 5px 10px -2px var(--shadow-color); /* Slightly stronger shadow on hover */
             }
             /* Override background color for dark mode*/
             .header-divider i{
                 background-color: var(--background-color);
             }
         }
-
-
 
         /* ========== Global Styles ========== */
         * {
@@ -67,28 +65,28 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7; /* Increased line height for better readability */
             color: var(--text-color);
             background: var(--background-color);
             -webkit-font-smoothing: antialiased;
-            padding-bottom: 40px; /* Space for copyright */
+            padding-bottom: 40px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 960px; /* Slightly wider container for more content space */
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px; /* Increased padding for side margins */
         }
 
       /* ========== Header Styles ========== */
         header {
-            padding: 80px 0 60px; /* Adjusted padding */
+            padding: 90px 0 70px; /* Adjusted padding, slightly more top padding */
             text-align: center;
-            border-bottom: none; /* Remove default border*/
+            border-bottom: none;
             position: relative;
         }
 
-        /* Skewed background effect (Optional) */
+        /* More subtle skewed background effect */
         header::before {
             content: '';
             position: absolute;
@@ -97,54 +95,54 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(135deg,
-                rgba(0, 123, 255, 0.1) 10%,
+                rgba(0, 123, 255, 0.08) 10%, /* Reduced opacity for subtle effect */
                 transparent 50%);
-            z-index: -1; /* Place behind content */
-            transform: skewY(-4deg); /* Skew the gradient */
+            z-index: -1;
+            transform: skewY(-2deg); /* Reduced skew for subtle effect */
             transform-origin: top left;
         }
 
         .name-container {
-          display: flex; /* Use flexbox for layout */
-          align-items: center; /* Vertically center content */
-          justify-content: center; /* Horizontally center content */
-          gap: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.75rem; /* Slightly reduced gap */
         }
 
         .name {
-            font-family: 'Oswald', sans-serif; /* Bold, condensed sans-serif */
-            font-size: 4.5rem;        /* Larger font size */
-            font-weight: 700;          /* Very bold */
-            letter-spacing: 0.1em;    /* More letter spacing */
-            text-transform: uppercase; /* ALL CAPS */
-            background: linear-gradient(135deg, var(--primary-color), #4e91f7); /* Gradient background */
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.75rem;        /* Reduced font size for cleaner look */
+            font-weight: 700;
+            letter-spacing: 0.08em;    /* Slightly less letter spacing */
+            text-transform: uppercase;
+            background: linear-gradient(90deg, var(--primary-color), #4e91f7); /* Adjusted gradient angle */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 0; /* Remove margin, handle with container */
+            margin-bottom: 0;
 
         }
 
         .title {
             color: var(--text-secondary);
-            font-size: 1.6rem;
+            font-size: 1.4rem; /* Reduced font size */
             font-weight: 500;
-            margin-bottom: 30px;
+            margin-bottom: 25px; /* Reduced margin */
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em; /* Slightly less letter spacing */
         }
         /* Style the icon*/
         .name-icon {
-          font-size: 3rem; /* Adjust as needed */
+          font-size: 2.75rem; /* Adjusted icon size */
           color: var(--primary-color);
         }
         /* Styling the hr*/
         .header-divider {
-          border: none; /* Remove default border */
+          border: none;
           height: 1px;
           background-color: var(--border-color);
-          position: relative; /* For absolute positioning of the icon */
-          margin-bottom: 20px; /* Adjust as needed */
-          margin-top: 20px;
+          position: relative;
+          margin-bottom: 15px; /* Reduced margin */
+          margin-top: 15px; /* Reduced margin */
         }
         /* Style icon in the hr*/
         .header-divider i {
@@ -152,47 +150,47 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          background-color: var(--background-color); /* Match background */
-          padding: 0 10px; /* Space around the icon */
-          color: var(--primary-color); /* Icon color */
-          font-size: 1.2rem; /* Adjust as needed */
+          background-color: var(--background-color);
+          padding: 0 8px; /* Reduced padding */
+          color: var(--primary-color);
+          font-size: 1rem; /* Reduced icon size */
         }
 
 
         /* ========== Contact Bar ========== */
         .contact-bar {
             display: flex;
-            gap: 24px;
+            gap: 16px; /* Reduced gap */
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 40px;
+            margin-bottom: 30px; /* Reduced margin */
         }
 
         .contact-link {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px; /* Reduced gap */
             color: var(--text-secondary);
             text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 12px;
+            padding: 6px 14px; /* Reduced padding */
+            border-radius: 8px; /* Reduced border radius */
             transition: all 0.2s ease;
-              text-transform: uppercase; /* Uppercase text */
-            font-size: 0.9rem;         /* Slightly smaller font */
-            letter-spacing: 0.05em;    /* Letter spacing */
+            text-transform: uppercase;
+            font-size: 0.85rem;         /* Slightly smaller font */
+            letter-spacing: 0.04em;    /* Reduced letter spacing */
         }
 
         .contact-link:hover {
             color: var(--primary-hover);
-            background: rgba(0, 123, 255, 0.2); /* Use primary color for hover */
+            background: rgba(0, 123, 255, 0.15); /* Reduced opacity hover background */
         }
 
         /* ========== Section Styles ========== */
         section {
-            margin: 60px 0;
+            margin: 50px 0; /* Reduced section margin */
             opacity: 0;
-            transform: translateY(20px);
-            transition: 0.6s ease;
+            transform: translateY(15px); /* Reduced transform distance */
+            transition: 0.5s ease; /* Slightly faster transition */
         }
 
         section.visible {
@@ -202,46 +200,46 @@
 
         .section-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 32px;
+            font-size: 1.75rem; /* Reduced font size */
+            margin-bottom: 28px; /* Reduced margin */
             position: relative;
             display: inline-block;
-              text-align: center;
-              width: 100%;
+            text-align: center;
+            width: 100%;
         }
         /* Underline effect */
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -8px;
-            left: 50%;  /* Start from the center */
-            transform: translateX(-50%); /* Center the underline */
-            width: 40px;
-            height: 3px;
-            background: var(--primary-color); /* Consistent primary color */
+            bottom: -6px; /* Adjusted position */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px; /* Reduced width */
+            height: 2px; /* Reduced height */
+            background: var(--primary-color);
             transition: width 0.3s ease;
 
         }
 
         .section-title:hover::after {
-            width: 80px; /* Longer underline on hover */
+            width: 60px; /* Reduced hover width */
 
         }
 
         /* ========== Experience Cards ========== */
         .experience-card {
             background: var(--surface-color);
-            padding: 32px;
-            border-radius: 12px;
-            margin-bottom: 24px;
+            padding: 28px; /* Reduced padding */
+            border-radius: 10px; /* Reduced border radius */
+            margin-bottom: 20px; /* Reduced margin */
             border: 1px solid var(--border-color);
             transition: all 0.3s ease;
-            box-shadow: 0 2px 4px var(--shadow-color); /* Add a subtle shadow */
+            box-shadow: 0 2px 4px var(--shadow-color);
         }
 
         .experience-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 8px var(--shadow-color); /* Increase shadow on hover */
+            transform: translateY(-3px); /* Reduced hover transform */
+            box-shadow: 0 5px 8px var(--shadow-color); /* Slightly stronger shadow on hover */
             border-color: var(--primary-color);
         }
 
@@ -249,53 +247,54 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 16px;
+            margin-bottom: 14px; /* Reduced margin */
         }
 
         .role {
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* Reduced font size */
             font-weight: 600;
-            color: var(--primary-color); /* Consistent primary color */
+            color: var(--primary-color);
         }
 
         .company {
             color: var(--text-secondary);
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem; /* Slightly smaller font */
         }
 
         .date {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem; /* Slightly smaller font */
             white-space: nowrap;
         }
 
         /* ========== Client Projects ========== */
         .client-project {
-            margin: 20px 0;
-            padding-left: 24px;
-            border-left: 3px solid var(--primary-color); /* Use primary color */
+            margin: 16px 0; /* Reduced margin */
+            padding-left: 20px; /* Reduced padding */
+            border-left: 2px solid var(--primary-color); /* Thinner border */
         }
 
         .client-project h4 {
-            font-size: 1rem;
-            margin-bottom: 12px;
+            font-size: 0.95rem; /* Slightly smaller font */
+            margin-bottom: 10px; /* Reduced margin */
             color: var(--text-color);
+            font-weight: 500; /* Added font weight for project title */
         }
         /* ========== Lists & Items ========== */
         ul {
-            list-style: none;  /* Remove default bullet points */
+            list-style: none;
             padding-left: 0;
         }
 
         ul li {
             position: relative;
-            padding-left: 24px; /* Space for the custom bullet */
-            margin-bottom: 12px;
+            padding-left: 20px; /* Reduced padding */
+            margin-bottom: 10px; /* Reduced margin */
             opacity: 0;
-            transform: translateX(-10px);
-            transition: all 0.4s ease;
-             color: var(--text-color); /* Consistent text color */
+            transform: translateX(-8px); /* Reduced transform distance */
+            transition: all 0.3s ease; /* Slightly faster transition */
+             color: var(--text-color);
         }
       /* General list in experience section*/
         ul.animated li {
@@ -304,50 +303,51 @@
         }
       /* General list in experience section*/
         ul li::before {
-            content: '•'; /* Custom bullet point */
+            content: '•';
             position: absolute;
             left: 0;
-            top: 0;  /* Align with the top of the text */
-            color: var(--primary-color); /* Use primary color for bullets */
-            font-size: 1.2rem; /* Adjust size as needed */
-            line-height: 1.6;
+            top: 0;
+            color: var(--primary-color);
+            font-size: 1rem; /* Reduced font size */
+            line-height: 1.7; /* Match body line-height */
         }
 
         /* ========== Skill Categories ========== */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Slightly narrower min-width */
+            gap: 14px; /* Reduced gap */
         }
 
         .skill-category {
             background: var(--surface-color);
-            padding: 24px;
-            border-radius: 12px;
+            padding: 20px; /* Reduced padding */
+            border-radius: 10px; /* Reduced border radius */
             border: 1px solid var(--border-color);
-              margin-bottom: 1rem;
-            box-shadow: 0 2px 4px var(--shadow-color); /* Add shadow */
+            margin-bottom: 0.75rem; /* Reduced margin */
+            box-shadow: 0 2px 3px var(--shadow-color); /* More subtle shadow */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
 
         }
         /* Hover effect for skill categories */
         .skill-category:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 8px var(--shadow-color);
+            transform: translateY(-3px); /* Reduced hover transform */
+            box-shadow: 0 4px 6px var(--shadow-color); /* Slightly stronger shadow on hover */
         }
 
       .skill-category h3{
-        font-size: 1.1rem;
+        font-size: 1rem; /* Reduced font size */
         font-weight: 600;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.4rem; /* Reduced margin */
         color: var(--primary-color);
       }
 
         .skill-item {
             position: relative;
-            padding-left: 24px;
-            margin-bottom: 12px;
+            padding-left: 20px; /* Reduced padding */
+            margin-bottom: 10px; /* Reduced margin */
             color: var(--text-color);
+            font-size: 0.9rem; /* Slightly smaller font for skill items */
         }
 
         .skill-item::before {
@@ -356,35 +356,39 @@
             left: 0;
             top: 0px;
             color: var(--primary-color);
-            font-size: 1.2rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.7; /* Match body line-height */
         }
 
         /* ========== Education and Certification Section ==========*/
 
         .education-certification-item{
-          margin-bottom: 1rem;
-          padding-left: 24px; /*Consistent with other sections*/
-          border-left: 3px solid var(--primary-color);
+          margin-bottom: 0.75rem; /* Reduced margin */
+          padding-left: 20px; /* Reduced padding */
+          border-left: 2px solid var(--primary-color); /* Thinner border */
         }
         .education-certification-item h4{
-          margin-bottom: 0.2rem;
-          font-size: 1rem;
+          margin-bottom: 0.1rem; /* Reduced margin */
+          font-size: 0.95rem; /* Slightly smaller font */
+          font-weight: 500; /* Added font weight */
+        }
+        .education-certification-item p {
+          font-size: 0.9rem; /* Slightly smaller font */
         }
 
         /* ========== Footer Styles ========== */
         footer {
             text-align: center;
-            padding: 20px 0;
+            padding: 15px 0; /* Reduced padding */
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem; /* Slightly smaller font */
         }
 
         /* ========== Animations ========== */
         @keyframes fadeSlide {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(15px); /* Reduced transform distance */
             }
             to {
                 opacity: 1;
@@ -393,34 +397,101 @@
         }
       /*Limit line length*/
       .profile-section p {
-          max-width: 70ch; /*  ch unit represents the width of the "0" (zero) character */
-          margin-bottom: 1rem;
+          max-width: 75ch; /* Slightly wider line length */
+          margin-bottom: 0.8rem; /* Reduced margin */
+          font-size: 0.95rem; /* Slightly smaller font for profile text */
       }
 
         /* ========== Responsive Design ========== */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 20px; /* Adjust container padding for smaller screens */
+            }
+            header {
+                padding: 70px 0 50px; /* Adjust header padding for smaller screens */
+            }
             .name {
-                font-size: 2.5rem; /* Responsive font size */
+                font-size: 2.25rem; /* Further responsive font size reduction */
             }
 
             .title {
-                font-size: 1.4rem; /* Responsive font size */
+                font-size: 1.2rem; /* Further responsive font size reduction */
             }
              .contact-link {
-                font-size: 0.8rem; /* Responsive font size */
+                font-size: 0.8rem;
             }
 
             .experience-header {
                 flex-direction: column;
-                gap: 8px;
+                gap: 6px; /* Reduced gap in experience header for smaller screens */
             }
 
             .date {
-                font-size: 0.85rem;
+                font-size: 0.8rem;
             }
               .name-icon {
-                font-size: 2.5rem;
+                font-size: 2.25rem; /* Further responsive icon size reduction */
             }
+            .section-title {
+                font-size: 1.5rem; /* Responsive section title size */
+                margin-bottom: 24px;
+            }
+             .section-title::after {
+                bottom: -5px;
+                width: 25px;
+                height: 2px;
+            }
+
+            .section-title:hover::after {
+                width: 50px;
+            }
+
+            .experience-card {
+                padding: 20px; /* Reduced padding for experience card on smaller screens */
+                margin-bottom: 16px;
+            }
+            .client-project {
+                margin: 12px 0;
+                padding-left: 16px;
+            }
+            ul li {
+                padding-left: 16px;
+                margin-bottom: 8px;
+            }
+            ul li::before {
+                font-size: 1rem;
+            }
+            .skills-grid {
+                gap: 12px;
+            }
+            .skill-category {
+                padding: 16px;
+                margin-bottom: 0.5rem;
+            }
+            .skill-item {
+                padding-left: 16px;
+                margin-bottom: 8px;
+                font-size: 0.85rem;
+            }
+             .skill-item::before {
+                font-size: 1rem;
+            }
+            .education-certification-item{
+              margin-bottom: 0.5rem;
+              padding-left: 16px;
+            }
+            .education-certification-item h4{
+              font-size: 0.9rem;
+              margin-bottom: 0.1rem;
+            }
+            .education-certification-item p {
+              font-size: 0.85rem;
+            }
+             .profile-section p {
+                  font-size: 0.9rem;
+                  margin-bottom: 0.7rem;
+              }
+
         }
 
     </style>
@@ -429,7 +500,7 @@
     <header>
         <div class="container">
             <div class="name-container">
-                <i class="ti ti-bolt name-icon" aria-hidden="true"></i> <!-- Example icon: bolt -->
+                <i class="ti ti-bolt name-icon" aria-hidden="true"></i>
                 <h1 class="name">TAN VO</h1>
             </div>
             <p class="title">Senior Cloud Engineer</p>
