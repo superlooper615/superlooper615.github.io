@@ -21,6 +21,7 @@
             max-width: 960px;
             margin: 0 auto;
             padding: 20px;
+            position: relative; /* Needed for absolute positioning */
         }
 
         h1 {
@@ -68,10 +69,15 @@
             margin-top: 2em;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 0px;
+        .ear-image-container {
+            position: absolute;
+            top: 100px;  /* Adjusted vertical position */
+            right: 30px; /* Adjusted horizontal position */
+            width: 200px; /* Adjusted width */
+        }
+        .ear-image-container img {
+          width: 100%;
+          height: auto;
         }
 
         .annotation {
@@ -141,6 +147,24 @@
         .project-section {
             margin-bottom: 2em;
         }
+        .rotated-text {
+            position: absolute;
+            bottom: 25px;  /*Adjusted vertical*/
+            right: 70px; /* Adjusted horizontal */
+            transform: rotate(-5deg);
+            font-style: italic;
+            font-family: 'Lora', serif;
+            font-size: 1.1em; /* Adjust size as needed*/
+        }
+        .rotated-text:before{
+            content: "↑";
+            font-size: larger;
+            display: block;
+           margin-left: -20px;
+
+        }
+
+
     </style>
 </head>
 
