@@ -15,7 +15,8 @@
         "HookyQR.beautify",
         "esbenp.prettier-vscode",
         "bradlc.vscode-tailwindcss",
-        "ChrisChinchilla.vscode-pandoc"
+        "ChrisChinchilla.vscode-pandoc",
+        "ritwickdey.LiveServer"
       ],
       "settings": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
