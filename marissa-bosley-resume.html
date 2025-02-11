@@ -3,789 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marissa "Ringo" Bosley | Attorney</title>
-    <meta name="description" content="Resume of Marissa Bosley, Attorney specializing in impact litigation and criminal justice reform.">
-
-    <!-- External Resources -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/tabler-icons.min.css">
-    <!-- Google Fonts with font-display: swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
-    <!-- Add Oswald font -->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
-
+    <title>Marissa "Ringo" Bosley - Attorney Resume</title>
     <style>
-       /* ========== Default Color Scheme (Light Mode) - Classic Blue & Gray ========== */
-        :root {
-            /* Light Mode Colors */
-            --primary-color: #004080;       /* Refined Navy Blue */
-            --primary-hover: #003366;     /* Darker Navy Blue for hover */
-            --text-color: #343a40;       /* Slightly Darker Gray for body text */
-            --text-secondary: #6c757d;    /* Medium Gray */
-            --background-color: #f8f9fa;   /* Very Light Gray Background */
-            --surface-color: #ffffff;    /* White for cards/surfaces */
-            --border-color: #e0e0e0;      /* Even Lighter Gray Border */
-            --shadow-color: rgba(0, 0, 0, 0.08); /* Very Subtle Shadow */
-        }
-
-        /* ========== Dark Mode Color Scheme (using prefers-color-scheme) ========== */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                /* Dark Mode Colors - Adjusted for Navy Blue */
-                --primary-color: #004080;
-                --primary-hover: #003366;
-                --text-color: #F8FAFC;
-                --text-secondary: #A7BBC7;
-                --background-color: #1E293B; /* Darker Background */
-                --surface-color: #2D3748; /* Darker Surface */
-                --border-color: #475569;
-                --shadow-color: rgba(0, 0, 0, 0.3); /* Darker Shadow */
-            }
-            /* Override header for dark mode - subtle gradient - Adjusted for Navy Blue */
-            header::before {
-              background: linear-gradient(135deg,
-                  rgba(0, 64, 128, 0.15) 10%, /* Navy Blue Gradient */
-                  transparent 50%);
-            }
-             /* Override experience card for dark mode*/
-            .experience-card:hover {
-                box-shadow: 0 5px 10px -2px var(--shadow-color); /* Slightly stronger shadow on hover */
-            }
-            /* Override background color for dark mode*/
-            .header-divider i{
-                background-color: var(--background-color);
-            }
-        }
-
-        /* ========== Global Styles ========== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7; /* Increased line height for better readability */
-            color: var(--text-color);
-            background: var(--background-color);
-            -webkit-font-smoothing: antialiased;
-            padding-bottom: 40px;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #333;
         }
-
         .container {
-            max-width: 960px; /* Slightly wider container for more content space */
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 30px; /* Increased padding for side margins */
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 10px #eee;
         }
-
-      /* ========== Header Styles ========== */
-        header {
-            padding: 90px 0 70px; /* Adjusted padding, slightly more top padding */
-            text-align: center;
-            border-bottom: none;
-            position: relative;
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            color: #004d80; /* Example professional color */
         }
-
-        /* More subtle skewed background effect - Adjusted for Navy Blue */
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg,
-                rgba(0, 64, 128, 0.08) 10%, /* Navy Blue Gradient */
-                transparent 50%);
-            z-index: -1;
-            transform: skewY(-2deg); /* Reduced skew for subtle effect */
-            transform-origin: top left;
+        h2 {
+            font-size: 1.8em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #004d80;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
         }
-
-        .name-container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.75rem; /* Slightly reduced gap */
+        h3 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            font-weight: bold;
         }
-
-        .name {
-            font-family: 'Oswald', sans-serif;
-            font-size: 3.75rem;        /* Reduced font size for cleaner look */
-            font-weight: 700;
-            letter-spacing: 0.08em;    /* Slightly less letter spacing */
-            text-transform: uppercase;
-            background: linear-gradient(90deg, var(--primary-color), #0056b3); /* Adjusted gradient angle & color to Navy Blue */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0;
-
+        p {
+            margin-bottom: 10px;
         }
-
-        .title {
-            color: var(--text-secondary);
-            font-size: 1.4rem; /* Reduced font size */
-            font-weight: 500;
-            margin-bottom: 25px; /* Reduced margin */
-            text-transform: uppercase;
-            letter-spacing: 0.08em; /* Slightly less letter spacing */
-        }
-        /* Style the icon*/
-        .name-icon {
-          font-size: 2.75rem; /* Adjusted icon size */
-          color: var(--primary-color);
-        }
-        /* Styling the hr*/
-        .header-divider {
-          border: none;
-          height: 1px;
-          background-color: var(--border-color);
-          position: relative;
-          margin-bottom: 15px; /* Reduced margin */
-          margin-top: 15px; /* Reduced margin */
-        }
-        /* Style icon in the hr*/
-        .header-divider i {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background-color: var(--background-color);
-          padding: 0 8px; /* Reduced padding */
-          color: var(--primary-color);
-          font-size: 1rem; /* Reduced icon size */
-        }
-
-
-        /* ========== Contact Bar ========== */
-        .contact-bar {
-            display: flex;
-            gap: 16px; /* Reduced gap */
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 30px; /* Reduced margin */
-        }
-
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px; /* Reduced gap */
-            color: var(--text-secondary);
+        a {
+            color: #007bff; /* Standard link color */
             text-decoration: none;
-            padding: 6px 14px; /* Reduced padding */
-            border-radius: 8px; /* Reduced border radius */
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            font-size: 0.85rem;         /* Slightly smaller font */
-            letter-spacing: 0.04em;    /* Reduced letter spacing */
         }
-
-        .contact-link:hover {
-            color: var(--primary-hover);
-            background: rgba(0, 64, 128, 0.10); /* Reduced opacity hover background - Navy Blue */
+        a:hover {
+            text-decoration: underline;
         }
-
-        /* ========== Section Styles ========== */
-        section {
-            margin: 50px 0; /* Reduced section margin */
-            opacity: 0;
-            transform: translateY(15px); /* Reduced transform distance */
-            transition: 0.5s ease; /* Slightly faster transition */
+        .contact-info {
+            margin-bottom: 20px;
         }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .contact-info p {
+            margin: 5px 0;
         }
-
-        .section-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.75rem; /* Reduced font size */
-            margin-bottom: 28px; /* Reduced margin */
-            position: relative;
-            display: inline-block;
-            text-align: center;
-            width: 100%;
+        .section {
+            margin-bottom: 25px;
         }
-        /* Underline effect */
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -6px; /* Adjusted position */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px; /* Reduced width */
-            height: 2px; /* Reduced height */
-            background: var(--primary-color);
-            transition: width 0.3s ease;
-
+        .experience-item {
+            margin-bottom: 15px;
         }
-
-        .section-title:hover::after {
-            width: 45px; /* Reduced hover width - adjusted from 60px to 45px */
-
+        .experience-item h3 {
+            margin-bottom: 2px;
         }
-
-        /* ========== Experience Cards ========== */
-        .experience-card {
-            background: var(--surface-color);
-            padding: 28px; /* Reduced padding */
-            border-radius: 10px; /* Reduced border radius */
-            margin-bottom: 20px; /* Reduced margin */
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px var(--shadow-color);
+        .experience-item p {
+            margin-bottom: 5px;
         }
-
-        .experience-card:hover {
-            transform: translateY(-3px); /* Reduced hover transform */
-            box-shadow: 0 5px 8px var(--shadow-color); /* Slightly stronger shadow on hover */
-            border-color: var(--primary-color);
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 14px; /* Reduced margin */
-        }
-
-        .role {
-            font-size: 1.1rem; /* Reduced font size */
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .company {
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.9rem; /* Slightly smaller font */
-        }
-
-        .date {
-            color: var(--text-secondary);
-            font-size: 0.85rem; /* Slightly smaller font */
-            white-space: nowrap;
-        }
-
-        /* ========== Client Projects ========== */
-        .client-project {
-            margin: 16px 0; /* Reduced margin */
-            padding-left: 20px; /* Reduced padding */
-            border-left: 2px solid var(--primary-color); /* Thinner border */
-        }
-
-        .client-project h4 {
-            font-size: 0.95rem; /* Slightly smaller font */
-            margin-bottom: 10px; /* Reduced margin */
-            color: var(--text-color);
-            font-weight: 500; /* Added font weight for project title */
-        }
-        /* ========== Lists & Items ========== */
         ul {
-            list-style: none;
-            padding-left: 0;
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 10px;
         }
-
-        ul li {
-            position: relative;
-            padding-left: 20px; /* Reduced padding */
-            margin-bottom: 10px; /* Reduced margin */
-            opacity: 0;
-            transform: translateX(-8px); /* Reduced transform distance */
-            transition: all 0.3s ease; /* Slightly faster transition */
-             color: var(--text-color);
+        .skills-list {
+            columns: 2; /* Example of columns for skills */
+            -webkit-columns: 2;
+            -moz-columns: 2;
         }
-      /* General list in experience section*/
-        ul.animated li {
-            opacity: 1;
-            transform: translateX(0);
-        }
-      /* General list in experience section*/
-        ul li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            top: 0; /* Changed from 'top: 0px;' to 'top: 0;' */
-            color: var(--primary-color);
-            font-size: 1rem;
-            line-height: 1.7; /* Match body line-height */
-            transform: translateY(0%); /* Removed vertical alignment attempt - keeping top alignment for bullet points in lists */
-        }
-
-        /* ========== Skill Categories ========== */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Slightly narrower min-width */
-            gap: 14px; /* Reduced gap */
-        }
-
-        .skill-category {
-            background: var(--surface-color);
-            padding: 20px; /* Reduced padding */
-            border-radius: 10px; /* Reduced border radius */
-            border: 1px solid var(--border-color);
-            margin-bottom: 0.75rem; /* Reduced margin */
-            box-shadow: 0 2px 3px var(--shadow-color); /* More subtle shadow */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-        }
-        /* Hover effect for skill categories */
-        .skill-category:hover {
-            transform: translateY(-3px); /* Reduced hover transform */
-            box-shadow: 0 4px 6px var(--shadow-color); /* Slightly stronger shadow on hover */
-        }
-
-      .skill-category h3{
-        font-size: 1rem; /* Reduced font size */
-        font-weight: 600;
-        margin-bottom: 0.4rem; /* Reduced margin */
-        color: var(--primary-color);
-      }
-
-        .skill-item {
-            position: relative;
-            padding-left: 20px; /* Reduced padding */
-            margin-bottom: 10px; /* Reduced margin */
-            color: var(--text-color);
-            font-size: 0.9rem; /* Slightly smaller font for skill items */
-        }
-
-        .skill-item::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            top: 50%; /* Vertically center bullet points */
-            transform: translateY(-50%); /* Vertically center bullet points */
-            color: var(--primary-color);
-            font-size: 1rem;
-        }
-
-        /* ========== Education and Certification Section ==========*/
-
-        .education-certification-item{
-          margin-bottom: 0.75rem; /* Reduced margin */
-          padding-left: 20px; /* Reduced padding */
-          border-left: 2px solid var(--primary-color); /* Thinner border */
-        }
-        .education-certification-item h4{
-          margin-bottom: 0.1rem; /* Reduced margin */
-          font-size: 0.95rem; /* Slightly smaller font */
-          font-weight: 500; /* Added font weight */
-        }
-        .education-certification-item p {
-          font-size: 0.9rem; /* Slightly smaller font */
-        }
-
-        /* ========== Footer Styles ========== */
-        footer {
-            text-align: center;
-            padding: 15px 0; /* Reduced padding */
-            color: var(--text-secondary);
-            font-size: 0.85rem; /* Slightly smaller font */
-        }
-
-        /* ========== Animations ========== */
-        @keyframes fadeSlide {
-            from {
-                opacity: 0;
-                transform: translateY(15px); /* Reduced transform distance */
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-      /*Limit line length*/
-      .profile-section p {
-          max-width: 75ch; /* Slightly wider line length */
-          margin-bottom: 0.8rem; /* Reduced margin */
-          font-size: 0.95rem; /* Slightly smaller font for profile text */
-      }
-
-        /* ========== Responsive Design ========== */
-        @media (max-width: 768px) {
             .container {
-                padding: 0 20px; /* Adjust container padding for smaller screens */
+                padding: 10px;
             }
-            header {
-                padding: 70px 0 50px; /* Adjust header padding for smaller screens */
+            h1 {
+                font-size: 2em;
             }
-            .name {
-                font-size: 2.25rem; /* Further responsive font size reduction */
+            h2 {
+                font-size: 1.6em;
             }
-
-            .title {
-                font-size: 1.2rem; /* Further responsive font size reduction */
+            .skills-list {
+                columns: 1; /* Single column on smaller screens */
+                -webkit-columns: 1;
+                -moz-columns: 1;
             }
-             .contact-link {
-                font-size: 0.8rem;
-            }
-
-            .experience-header {
-                flex-direction: column;
-                gap: 6px; /* Reduced gap in experience header for smaller screens */
-            }
-
-            .date {
-                font-size: 0.8rem;
-            }
-              .name-icon {
-                font-size: 2.25rem; /* Further responsive icon size reduction */
-            }
-            .section-title {
-                font-size: 1.5rem; /* Responsive section title size */
-                margin-bottom: 24px;
-            }
-             .section-title::after {
-                bottom: -5px;
-                width: 25px;
-                height: 2px;
-            }
-
-            .section-title:hover::after {
-                width: 50px;
-            }
-
-            .experience-card {
-                padding: 20px; /* Reduced padding for experience card on smaller screens */
-                margin-bottom: 16px;
-            }
-            .client-project {
-                margin: 12px 0;
-                padding-left: 16px;
-            }
-            ul li {
-                padding-left: 16px;
-                margin-bottom: 8px;
-            }
-            ul li::before {
-                font-size: 1rem;
-            }
-            .skills-grid {
-                gap: 12px;
-            }
-            .skill-category {
-                padding: 16px;
-                margin-bottom: 0.5rem;
-            }
-            .skill-item {
-                padding-left: 16px;
-                margin-bottom: 8px;
-                font-size: 0.85rem;
-            }
-             .skill-item::before {
-                font-size: 1rem;
-            }
-            .education-certification-item{
-              margin-bottom: 0.5rem;
-              padding-left: 16px;
-            }
-            .education-certification-item h4{
-              font-size: 0.9rem;
-              margin-bottom: 0.1rem;
-            }
-            .education-certification-item p {
-              font-size: 0.85rem;
-            }
-             .profile-section p {
-                  font-size: 0.9rem;
-                  margin-bottom: 0.7rem;
-              }
-
         }
-
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="name-container">
-                <h1 class="name">MARISSA "RINGO" BOSLEY</h1>
+    <div class="container">
+        <section class="contact-info">
+            <h1>MARISSA "RINGO" BOSLEY</h1>
+            <p>Houston, Texas- 77057 | <a href="tel:225-620-7712">(225) 620-7712</a> | <a href="mailto:marissakbosley@gmail.com">marissakbosley@gmail.com</a> | <a href="https://linkedin.com/in/ringokbosley/" target="_blank">linkedin.com/in/ringokbosley/</a></p>
+        </section>
+
+        <section class="section summary">
+            <h2>Summary</h2>
+            <p>High-caliber attorney with over two years post-J.D. experience in impact litigation and six years in public interest coalitions and organizational partnerships for criminal justice reform.  A strategic and tenacious advocate adept at nuanced problem-solving. Experienced in counseling over 100 clients, possessing excellent research, writing, and communication skills for litigation, strategy, and drafting in Texas state courts.</p>
+        </section>
+
+        <section class="section work-experience">
+            <h2>Work Experience</h2>
+            <div class="experience-item">
+                <h3>Staff Attorney</h3>
+                <p>Neighborhood Defender Service of Texas, Houston, TX | 08/2022 - Present</p>
+                <ul>
+                    <li>Served as staff attorney under supervision, conducting thorough investigations and handling discovery for clients arrested under Texas Operation Lone Star.</li>
+                    <li>Provided sound and reliable legal counsel to clients facing misdemeanor and felony charges.</li>
+                    <li>Built relationships of mutual respect and trust with clients, understanding their concerns, explaining options, and roadmapping courses of action.</li>
+                    <li>Recognized clients as experts in their own lives and communities.</li>
+                    <li>Participated in litigation panels and public education events.</li>
+                    <li>Prepared and conducted depositions, consulted with expert witnesses, and drafted clear, concise litigation memoranda in Texas state courts.</li>
+                </ul>
             </div>
-            <p class="title">Attorney | Houston, Texas</p> <hr class="header-divider">
-                <i class="ti ti-arrow-down" aria-hidden="true"></i>
-            </hr>
-            <nav class="contact-bar">
-                <a href="#" class="contact-link" id="email-link">
-                    <i class="ti ti-mail" aria-hidden="true"></i>
-                    Email
-                </a>
-                <a href="#" class="contact-link" id="phone-link">
-                    <i class="ti ti-phone" aria-hidden="true"></i>
-                    Phone
-                </a>
-                <a  href="https://linkedin.com/in/ringokbosley/" class="contact-link" target="_blank" rel="noopener noreferrer">
-                    <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
-                    LinkedIn
-                </a>
-                <a  href="YOUR_GITHUB_PAGES_URL_HERE" class="contact-link" target="_blank" rel="noopener noreferrer">  <!-- ADD GITHUB PAGES URL HERE -->
-                    <i class="ti ti-world" aria-hidden="true"></i>
-                    Website
-                </a>
-            </nav>
-        </div>
-    </header>
 
-    <main> <!-- Main element starts here, wrapping all sections -->
-        <div class="container">
-            <!-- About Section - Moved to be first -->
-            <section class="about profile-section">
-                <h2 class="section-title">Professional Profile</h2>
-                <p>
-                    High-caliber attorney with at least two years post-J.D. experience in impact litigation, and about six years working with public interest coalitions and organizational partners reforming systems of criminal (in)justice. A self-starter in strategic advocacy campaigns with a tenacious ability to identify nuances. Experienced in counseling over 100 individual clients, with excellent research, writing, and oral communication skills for preparing litigation memoranda, contributing to strategy, and drafting pleadings and affidavits in Texas state courts.
-                </p>
-            </section>
+            <div class="experience-item">
+                <h3>Co-Founder</h3>
+                <p>Policy Films, LLC (LaReform), Louisiana | 06/2020 - 02/2023</p>
+                <ul>
+                    <li>Assisted civil rights organizations in designing and implementing strategic advocacy campaigns focused on democracy, barrier reduction, and policy change for a fairer Louisiana.</li>
+                    <li>Served as spokesperson throughout Louisiana, delivering presentations and engaging with media outlets to promote documentary "Slave State," legislation, and the "Vote YES on Const. Amendment 7 (2022)" campaign.</li>
+                    <li>Engaged with clients, organizational partners, and coalitions to oppose rights suppression, demonstrating collaborative work across diverse groups.</li>
+                </ul>
+            </div>
 
-            <!-- Experience Section -->
-            <section id="experience">
-                <h2 class="section-title">Work Experience</h2>
+            <div class="experience-item">
+                <h3>Defendant Interviewer</h3>
+                <p>Bail Bond Project, 19th JDC Baton Rouge, LA | 12/2021 - 07/2022</p>
+            </div>
 
-                <!-- Neighborhood Defender Service of Texas -->
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div>
-                            <h3 class="role">Staff Attorney</h3>
-                            <p class="company">Neighborhood Defender Service of Texas</p>
-                        </div>
-                        <span class="date">08/2022 - Present</span>
-                    </div>
-                    <ul>
-                        <li>Staff attorney under the supervision of assigned supervising attorneys, conducting thorough and efficient investigations, handling discovery, and providing sound, reliable legal counsel to individual clients arrested for misdemeanors/felonies under Texas Operation Lone Star.</li>
-                        <li>Building relationships of mutual respect, trust, and dependability with individual clients, where we learn about their concerns, explain options, roadmap a course of action, and flag challenges, whilst recognizing people are experts in their own lives and communities.</li>
-                        <li>Participated in litigation panels, public education events, preparing and conducting depositions, consulting with and preparing expert witnesses, and preparing clear, concise, appropriately framed litigation memoranda in Texas state courts.</li>
-                    </ul>
-                </div>
+            <div class="experience-item">
+                <h3>Policy Intern / Analyst</h3>
+                <p>The Voice of the Experienced (VOTE) / Louis A. Berry Institute | 01/2022 - 06/2022</p>
+                <ul>
+                    <li>Collaborated with community allies on research defending voting rights for incarcerated individuals and grassroots voter mobilization.</li>
+                </ul>
+            </div>
 
-                <!-- Policy Films, LLC (LaReform) -->
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div>
-                            <h3 class="role">Co-Founder</h3>
-                            <p class="company">Policy Films, LLC (LaReform)</p>
-                        </div>
-                        <span class="date">06/2020 - 02/2023</span>
-                    </div>
-                    <ul>
-                        <li>Assisted civil rights organization with designing and implementing our strategic advocacy campaigns to fight for access to democracy, knock down barriers, and create the policy changes necessary for a fairer, more just Louisiana.</li>
-                        <li>Served as spokesperson throughout Louisiana for the organization in presentations, speaking engagements, and various communication and media outlets, promoting our documentary, Slave State, legislation, and Vote YES on Const. Amendment 7 (2022).</li>
-                        <li>Engaged with individual clients, organizational partners, and public interest coalitions to oppose new attempts to suppress rights, with a track record of working collaboratively with diverse groups of individuals.</li>
-                    </ul>
-                </div>
+            <div class="experience-item">
+                <h3>Law Clerk</h3>
+                <p>Orleans Public Defenders, New Orleans, LA | 05/2021 - 08/2021</p>
+                <ul>
+                    <li>Discussed potential client outcomes and handled discovery under the supervision of a Public Defender attorney.</li>
+                </ul>
+            </div>
 
-                <!-- Bail Bond Project -->
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div>
-                            <h3 class="role">Defendant Interviewer</h3>
-                            <p class="company">Bail Bond Project, 19th JDC</p>
-                        </div>
-                        <span class="date">12/2021 - 07/2022</span>
-                    </div>
-                </div>
+            <div class="experience-item">
+                <h3>Policy Intern</h3>
+                <p>Harris County Office of Justice and Safety, Houston, TX | 01/2021 - 05/2021</p>
+                <ul>
+                    <li>Collaborated with a political science team on critical criminal justice policy thinking within Harris County.</li>
+                    <li>Represented the Justice Administration Department in meetings with experts, scientists, and stakeholders to advance equality and justice for marginalized Texans.</li>
+                    <li>Contributed to various programmatic areas as needed.</li>
+                </ul>
+            </div>
+        </section>
 
-                <!-- The Voice of the Experienced (VOTE) / Louis A. Berry Institute -->
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div>
-                            <h3 class="role">Policy Intern / Analyst</h3>
-                            <p class="company">The Voice of the Experienced (VOTE) / Louis A. Berry Institute</p>
-                        </div>
-                        <span class="date">01/2022 - 06/2022</span>
-                    </div>
-                    <ul>
-                        <li>Worked alongside community allies with research in defending voting rights for those who are incarcerated and in grassroots voter mobilization efforts for voter registration.</li>
-                    </ul>
-                </div>
+        <section class="section education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Juris Doctorate (JD) - Public Law</h3>
+                <p>Southern University Law Center (SULC), Baton Rouge, LA | Graduation Year, 2022</p>
+                <p><em>Licensed to practice law in Texas</em></p>
+            </div>
+            <div class="education-item">
+                <h3>Political Science, BA - Public Policy</h3>
+                <p>Louisiana State University (LSU), Baton Rouge, LA | Graduation Year, 2019</p>
+            </div>
+        </section>
 
-                <!-- Orleans Public Defenders -->
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div>
-                            <h3 class="role">Law Clerk</h3>
-                            <p class="company">Orleans Public Defenders</p>
-                        </div>
-                        <span class="date">05/2021 - 08/2021</span>
-                    </div>
-                    <ul>
-                        <li>Discussed potential outcomes for individual clients, and handled discovery in working closely with a supervising attorney in the Public Defense office.</li>
-                    </ul>
-                </div>
+        <section class="section publications">
+            <h2>Publications</h2>
+            <div class="publication-item">
+                <h3>The Criminalization of Human Trafficking Victims</h3>
+                <p>Journal of Race, Gender, and Poverty, SULC | 05/03/2021</p>
+            </div>
+        </section>
 
-                <!-- Harris County Office of Justice and Safety -->
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div>
-                            <h3 class="role">Policy Intern</h3>
-                            <p class="company">Harris County Office of Justice and Safety</p>
-                        </div>
-                        <span class="date">01/2021 - 05/2021</span>
-                    </div>
-                    <ul>
-                        <li>Collaborated with a political science team in the critical thinking of criminal justice policies in Harris County police force, attorneys, constables, Texas state courts, and more. Represented the Justice Administration Department on calls and meetings with experts, scientists, stakeholders, partners and other civil rights organizations in helping countless low-income and otherwise marginalized Texans to widely advance equality and justice. Contributed to other programmatic areas as needed.</li>
-                    </ul>
-                </div>
+        <section class="section skills">
+            <h2>Skills & Accomplishments</h2>
+            <ul class="skills-list">
+                <li><strong>Strategic Advocacy:</strong> Research | Writing | Issue Spotter | Well-organized | Oral Communication</li>
+                <li><strong>Legislative Advocacy:</strong> Resilient | Collaborative | Spokesperson | Openness</li>
+                <li><strong>Entrepreneurship:</strong> Self-Starter | Flexible | Innovative Thinker | Trouble Shooter | Presentations</li>
+                <li><strong>Public Law Certificate:</strong> Completed courses in administrative law, legislative drafting, and the Texas Legislative Internship Program, interning for the Texas Harris County Justice Administration Department.</li>
+                <li><strong>Documentary Campaign:</strong> Co-Directed and hosted screenings of "Slave State" in 10+ locations across Louisiana, fighting for grassroots voter mobilization on constitutional amendment 7 (November 2022).</li>
+                <li><strong>SB172 Passed:</strong> Led strategic advocacy to end child marriage in Louisiana, setting a floor age of 16 and implementing measures against human trafficking/forced child marriage.</li>
+            </ul>
+        </section>
 
-            </section>
-
-            <!-- Bar Admissions Section - New Section -->
-            <section id="bar-admissions">
-                <h2 class="section-title">Bar Admissions</h2>
-                <div class="education-certification-item">
-                    <h4>State Bar of Texas</h4>
-                    <p><em>Bar Number: [Your Texas Bar Number]</em></p> <!- Replace with actual Bar Number -->
-                    <p><em>Admitted: [Date of Admission]</em></p> <!- Replace with actual Admission Date -->
-                </div>
-                <!-- Add more jurisdictions if admitted elsewhere -->
-            </section>
-
-            <!-- Education Section -->
-            <section id="education-certification">
-                <h2 class="section-title">Education</h2>
-
-                <div class="education-certification-item">
-                    <h4>Juris Doctorate (JD) - Public Law</h4>
-                    <p>Southern University Law Center (SULC), Baton Rouge, LA</p>
-                    <p><em>Graduation Year: 2022</em></p>
-                    <p><em>Licensed to practice law in Texas</em></p>
-                </div>
-
-                <div class="education-certification-item">
-                  <h4>Political Science, BA - Public Policy</h4>
-                  <p>Louisiana State University (LSU), Baton Rouge, LA</p>
-                  <p><em>Graduation Year: 2019</em></p>
-                </div>
-            </section>
-
-            <!-- Publications Section -->
-            <section id="publications">
-                <h2 class="section-title">Publications</h2>
-
-                <div class="education-certification-item">
-                    <h4>The Criminalization of Human Trafficking Victims | Journal of Race, Gender, and Poverty, SULC</h4>
-                    <p><em>Date: 05/03/2021</em></p>
-                </div>
-            </section>
-
-            <!-- Skills Section -->
-            <section id="skills">
-                <h2 class="section-title">Skills & Accomplishments</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Strategic Advocacy</h3>
-                            <div class = "skill-item">Research</div>
-                            <div class = "skill-item">Writing</div>
-                            <div class = "skill-item">Issue Spotter</div>
-                            <div class = "skill-item">Well-organized</div>
-                            <div class = "skill-item">Oral Communication</div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Legislative Advocacy</h3>
-                            <div class = "skill-item">Resilient</div>
-                            <div class = "skill-item">Collaborative</div>
-                            <div class = "skill-item">Spokesperson</div>
-                            <div class = "skill-item">Openness</div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Entrepreneurship</h3>
-                            <div class = "skill-item">Self-Starter</div>
-                            <div class = "skill-item">Flexible</div>
-                            <div class = "skill-item">Innovative Thinker</div>
-                            <div class = "skill-item">Trouble Shooter</div>
-                            <div class = "skill-item">Presentations</div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Public Law Certificate</h3>
-                        <p>Completed courses in law school such as administrative law, legislative drafting, and the Texas Legislative Internship Program, interning for the Texas Harris County Justice Administration Department.</p>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Documentary Campaign</h3>
-                        <p>Co-Directed and hosted screenings of Slave State in more than 10 different locations across Louisiana in a strategic advocacy campaign, fighting for grassroots voter mobilization efforts to cast a ballot on constitutional amendment 7, November 2022.</p>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>SB172 Passed</h3>
-                        <p>Led a strategic advocacy campaign to end child marriage in the Louisiana legislature, resulting in a floor age for marriage of 16 years old and measures to prevent human trafficking or forced child marriage.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Clubs and Organizations Section -->
-            <section id="clubs-organizations">
-                <h2 class="section-title">Clubs & Organizations</h2>
-
-                <div class="education-certification-item">
-                    <h4>Southern University Law Center (SULC)</h4>
-                    <ul>
-                        <li>President | Environmental Law Society (08/2019 - 05/2022)</li>
-                        <li>Member | Student Bar Association Diversity Committee</li>
-                        <li>Sr./Jr. Editor | The Journal of Race, Gender, and Poverty</li>
-                        <li>Student Advisor | Board of Student Advisors</li>
-                        <li>Secretary | National Police Accountability Project</li>
-                        <li>Member | The Public Defender Newspaper</li>
-                    </ul>
-                </div>
-
-                <div class="education-certification-item">
-                    <h4>Louisiana State University (LSU)</h4>
-                    <ul>
-                        <li>President | Tigers Against Trafficking (08/2017 – 05/2019)</li>
-                        <li>Executive Staff | LSU Student Government</li>
-                    </ul>
-                </div>
-            </section>
-
-        </div>
-    </main> <!-- Main element closing tag -->
-
-    <footer>
-      <div class="container">
-          © 2025 Marissa "Ringo" Bosley. All rights reserved.
-      </div>
-    </footer>
-
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-
-                    // Animate ALL lists in the section including nested ones
-                    const lists = entry.target.querySelectorAll('ul');
-                    lists.forEach(list => {
-                        list.classList.add('animated');
-                        Array.from(list.children).forEach((item, index) => {
-                            item.style.transitionDelay = `${index * 0.1}s`;
-                        });
-                    });
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // --- Email and Phone Obfuscation ---
-        document.getElementById('email-link').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default action
-            const user = 'marissakbosley';
-            const domain = 'gmail.com';
-            const email = user + '@' + domain;
-            window.location.href = 'mailto:' + email;
-        });
-
-        document.getElementById('phone-link').addEventListener('click', function(event) {
-            event.preventDefault();
-            const phone = '2256207712';
-            window.location.href = 'tel:' + phone;
-        });
-
-    </script>
+        <section class="section clubs-organizations">
+            <h2>Clubs and Organizations</h2>
+            <div class="organization-item">
+                <h3>Southern University Law Center (SULC) | 08/2019 - 05/2022</h3>
+                <ul>
+                    <li>President, Environmental Law Society</li>
+                    <li>Member, Student Bar Association Diversity Committee</li>
+                    <li>Sr./Jr. Editor, The Journal of Race, Gender, and Poverty</li>
+                    <li>Student Advisor, Board of Student Advisors</li>
+                    <li>Secretary, National Police Accountability Project</li>
+                    <li>Member, The Public Defender Newspaper</li>
+                </ul>
+            </div>
+            <div class="organization-item">
+                <h3>Louisiana State University (LSU) | 08/2017 - 05/2019</h3>
+                <ul>
+                    <li>President, Tigers Against Trafficking</li>
+                    <li>Executive Staff, LSU Student Government</li>
+                </ul>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
