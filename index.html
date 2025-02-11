@@ -3,169 +3,544 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tan Vo - Senior Cloud Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Tan Vo | Senior Cloud Engineer</title>
+    <meta name="description" content="Senior Cloud Engineer specializing in Cloud Architecture, DevOps, and Infrastructure Automation">
+
+    <!-- External Resources -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.0.0-beta1/tabler-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+
+    <style>
+       /* ========== Color Scheme Suggestions ========== */
+        :root {
+            /* Option 1: Classic Blue (Professional & Trustworthy) */
+            --primary-color: #007bff; /* Blue */
+            --primary-hover: #0056b3; /* Darker Blue on Hover */
+            --text-color: #343a40; /* Dark Gray */
+            --text-secondary: #6c757d; /* Medium Gray */
+            --background-color: #ffffff; /* White */
+            --surface-color: #f8f9fa; /* Light Gray */
+            --border-color: #dee2e6; /* Lighter Gray */
+
+            /* Option 2: Teal & Gray (Modern & Approachable) */
+            /* --primary-color: #20c997; 
+            --primary-hover: #12876f;
+            --text-color: #343a40;
+            --text-secondary: #6c757d;
+            --background-color: #ffffff;
+            --surface-color: #f8f9fa;
+            --border-color: #dee2e6; */
+
+            /* Option 3: Dark Mode (Sleek & Modern)*/
+            /* --primary-color: #00f3ff;
+            --primary-hover: #00a2b3;
+            --text-color: #f8fafc;
+            --text-secondary: #94a3b8;
+            --background-color: #0f172a;
+            --surface-color: #1e293b;
+            --border-color: #475569; */
+        }
+
+        /* ========== Global Styles ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--background-color);
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: 40px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========== Header Styles ========== */
+        header {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg,
+                rgba(0, 123, 255, 0.15),  /* Lighter shade of primary */
+                rgba(0, 123, 255, 0.05)); /* Even lighter shade */
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary-color),  #4e46b8); /* Use primary in gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .title {
+            color: var(--text-secondary);
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        /* ========== Contact Bar ========== */
+        .contact-bar {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--primary-hover);
+            background: rgba(0, 123, 255, 0.1); /* Use primary color for hover */
+        }
+
+        /* ========== Section Styles ========== */
+        section {
+            margin: 60px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.6s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 32px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary-color); /* Consistent primary color */
+            transform-origin: left;
+            transition: width 0.3s ease;
+        }
+
+        .section-title:hover::after {
+            width: 100%;
+        }
+
+        /* ========== Experience Cards ========== */
+        .experience-card {
+            background: var(--surface-color);
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 16px;
+        }
+
+        .role {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color); /* Consistent primary color */
+        }
+
+        .company {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        /* ========== Client Projects ========== */
+        .client-project {
+            margin: 20px 0;
+            padding-left: 24px;
+            border-left: 3px solid var(--primary-color); /* Use primary color */
+        }
+
+        .client-project h4 {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+        }
+        /* ========== Lists & Items ========== */
+        ul {
+            list-style: none;  /* Remove default bullet points */
+            padding-left: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 24px; /* Space for the custom bullet */
+            margin-bottom: 12px;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.4s ease;
+             color: var(--text-color); /* Consistent text color */
+        }
+      /* General list in experience section*/
+        ul.animated li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+      /* General list in experience section*/
+        ul li::before {
+            content: '•'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            top: 0;  /* Align with the top of the text */
+            color: var(--primary-color); /* Use primary color for bullets */
+            font-size: 1.2rem; /* Adjust size as needed */
+            line-height: 1.6;
+        }
+
+        /* ========== Skill Categories ========== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-category {
+            background: var(--surface-color);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+              margin-bottom: 1rem;
+
+        }
+      .skill-category h3{
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+      }
+      /* Skill Section*/
+        .skill-category ul li {
+            position: relative;
+            padding-left: 24px; /* Space for the custom bullet */
+            margin-bottom: 12px;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.4s ease;
+            color: var(--text-color); /* Ensure text color is consistent */
+
+        }
+      /* Skill Section*/
+        .skill-category ul.animated li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+      /* Skill Section*/
+        .skill-category ul li::before {
+            content: '•'; /* Use a bullet character */
+            position: absolute;
+            left: 0;
+            top: 0px;
+            color: var(--primary-color);  /* Consistent primary color for bullets */
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* ========== Animations ========== */
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== Responsive Design ========== */
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.5rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .date {
+                font-size: 0.85rem;
+            }
+        }
+      .profile-section p{
+        margin-bottom: 1rem;
+      }
+    </style>
 </head>
 <body>
     <header>
-        <div class="container hero-content">
-            <h1>Tan Vo</h1>
+        <div class="container">
+            <h1 class="name">Tan Vo</h1>
             <p class="title">Senior Cloud Engineer</p>
-            <div class="contact-info">
-                <a href="mailto:Tvo22@outlook.com">Tvo22@outlook.com</a>
-                <a href="tel:8329301387">(832) 930-1387</a>
-                <span>Houston, TX</span>
-            </div>
+            <nav class="contact-bar">
+                <a href="mailto:Tvo22@outlook.com" class="contact-link">
+                    <i class="ti ti-mail"></i>
+                    Tvo22@outlook.com
+                </a>
+                <a href="tel:8329301387" class="contact-link">
+                    <i class="ti ti-phone"></i>
+                    (832) 930-1387
+                </a>
+                <span class="contact-link">
+                    <i class="ti ti-map-pin"></i>
+                    Houston, TX
+                </span>
+            </nav>
         </div>
     </header>
 
-    <section id="about" class="section reveal">
+    <main>
         <div class="container">
-            <h2>About Me</h2>
-            <p>Highly motivated and results-oriented Senior Cloud Engineer with 7+ years of experience in designing, deploying, and managing cloud infrastructure and applications. Proven expertise in the Google Cloud Platform, Healthcare Data Engine, Kubernetes, CI/CD, and DevOps practices. Skilled in automation, data analysis, and project management. Passionate about building high-performance cloud solutions that drive business value.</p>
-        </div>
-    </section>
+            <!-- About Section -->
+            <section class="about profile-section">
+                <h2 class="section-title">Professional Profile</h2>
+                <p>
+                    Highly motivated and results-oriented Senior Cloud Engineer with 7+ years of experience in designing, deploying, and managing cloud infrastructure and applications. Proven expertise in Google Cloud Platform, Healthcare Data Engine, Kubernetes, CI/CD, and DevOps practices. Skilled in automation, data analysis, and project management. Passionate about building high-performance cloud solutions that drive business value.
+                </p>
+            </section>
 
-    <section id="experience" class="section reveal">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="experience-item">
-                <h3>Senior Cloud Engineer Consultant</h3>
-                <span class="company">Quantiphi Inc.</span>  <!-- Main Company -->
-                <span class="date">09/2021 - 08/2024</span>
-                <ul>
-                    <li><strong>Uniformed Services University of the Health Sciences (Client Project):</strong>
-                        <ul>
+            <!-- Experience Section -->
+            <section id="experience">
+                <h2 class="section-title">Professional Journey</h2>
+
+                <!-- Quantiphi -->
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="role">Senior Cloud Engineer Consultant</h3>
+                            <p class="company">Quantiphi Inc.</p>
+                        </div>
+                        <span class="date">09/2021 - 08/2024</span>
+                    </div>
+
+                    <!-- USUHS Project -->
+                    <div class="client-project">
+                        <h4>Uniformed Services University of the Health Sciences</h4>
+                        <ul class="animated">
                             <li>Automated data sharing and enhanced data security using FedRAMP compliant, customizable Terraform templates, resulting in a 30% reduction in data sharing time.</li>
-                            <li>Established a data governance strategy, resulting in a 99.99% data availability rate.</li>
-                            <li>Developed a repeatable solution architecture for data ingestion, resulting in a 20% decrease in data processing time.</li>
-                            <li>Developed Python and shell scripts to ingest 25 TB of DICOM datasets 50% faster than estimated.</li>
-                            <li>Recommended security best practices, reducing security vulnerabilities by 15%.</li>
-                            <li>Automated metadata bucket tagging, reducing manual tagging time by 80%.</li>
+                            <li>Established data governance strategy ensuring 99.99% data availability rate.</li>
+                            <li>Developed repeatable solution architecture for data ingestion, reducing processing time by 20%.</li>
+                            <li>Created Python/Shell scripts ingesting 25 TB of DICOM datasets 50% faster than estimates.</li>
+                            <li>Implemented security best practices reducing vulnerabilities by 15%.</li>
+                            <li>Automated metadata bucket tagging, cutting manual time by 80%.</li>
                         </ul>
-                    </li>
-                    <li><strong>Highmark Health (Client Project):</strong>
+                    </div>
+
+                    <!-- Highmark Health Project -->
+                    <div class="client-project">
+                        <h4>Highmark Health</h4>
+                        <ul class="animated">
+                            <li>Developed AI/ML deployment protocols maintaining 99.9% SLA.</li>
+                            <li>Improved system performance by 10% while reducing costs 5%.</li>
+                            <li>Created HDE operation runbook saving 20% onboarding time.</li>
+                            <li>Architected scalable data pipelines saving 80 hours/ingestion cycle.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Cityblock Health Project -->
+                    <div class="client-project">
+                        <h4>Cityblock Health</h4>
+                        <ul class="animated">
+                            <li>Mitigated Terraform state drift saving $10,000/month.</li>
+                            <li>Built HIPAA-compliant ETL pipelines saving $15,000/cycle.</li>
+                            <li>Streamlined knowledge transfer saving $5,000/onboarding.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Ncontracts -->
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="role">Cloud Engineer Lead Contractor</h3>
+                            <p class="company">Ncontracts Inc.</p>
+                        </div>
+                        <span class="date">03/2021 - 09/2021</span>
+                    </div>
+                    <ul class="animated">
+                        <li>Designed hybrid environment improving availability by 15%.</li>
+                        <li>Architected infrastructure components (network, security, CI/CD).</li>
+                    </ul>
+                </div>
+
+                <!-- University of Houston -->
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="role">Cloud Engineer</h3>
+                            <p class="company">University of Houston</p>
+                        </div>
+                        <span class="date">10/2017 - 03/2021</span>
+                    </div>
+                    <ul class="animated">
+                        <li>Centralized security patching with Ansible (100% uptime).</li>
+                        <li>Implemented ELK stack for network visibility.</li>
+                        <li>Improved security awareness from 47% to 98%.</li>
+                    </ul>
+                </div>
+
+                <!-- Pink Zebra -->
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="role">System Administrator</h3>
+                            <p class="company">Pink Zebra Home</p>
+                        </div>
+                        <span class="date">04/2015 - 07/2017</span>
+                    </div>
+                    <ul class="animated">
+                        <li>Deployed product picking system 1 week early.</li>
+                        <li>Expanded network coverage by 30%.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills">
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Cloud Platforms & Services</h3>
                         <ul>
-                            <li>Developed protocols for secure deployment and maintenance of AI/ML models, ensuring 99.9% SLA.</li>
-                            <li>Collaborated to improve system performance by 10% and reduce infrastructure costs by 5%.</li>
-                            <li>Developed an HDE operation run book, saving 20% onboarding time.</li>
-                            <li>Architected scalable data pipelines, saving 80 hours per data ingestion cycle.</li>
-                            <li>Automated developer onboarding using Terraform, saving 20% onboarding time.</li>
+                            <li class="skill-item">Google Cloud Platform (GCP)</li>
+                            <li class="skill-item">Amazon Web Services (AWS)</li>
+                            <li class="skill-item">Microsoft Azure</li>
+                            <li class="skill-item">Healthcare Data Engine (HDE)</li>
+                            <li class="skill-item">Kubernetes (GKE, EKS, AKS)</li>
+                            <li class="skill-item">Serverless Computing</li>
+                            <li class="skill-item">Infrastructure as Code (IaC)</li>
                         </ul>
-                    </li>
-                     <li><strong>Cityblock Health (Client Project):</strong>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>DevOps & Automation</h3>
                         <ul>
-                            <li>Mitigated Terraform state drift with CI/CD, saving an estimated $10,000 per month.</li>
-                            <li>Built HIPAA compliant ETL pipelines, saving an estimated $15,000 per data ingestion cycle.</li>
-                            <li>Streamlined knowledge transfer, saving an estimated $5,000 per new team member onboarding.</li>
+                            <li class="skill-item">CI/CD Pipelines</li>
+                            <li class="skill-item">Terraform</li>
+                            <li class="skill-item">Ansible</li>
+                            <li class="skill-item">Docker</li>
+                            <li class="skill-item">Git</li>
+                            <li class="skill-item">Configuration Management</li>
+                            <li class="skill-item">Monitoring & Logging</li>
                         </ul>
-                    </li>
-                </ul>
-            </div>
+                    </div>
 
-            <div class="experience-item">
-                <h3>Cloud Engineer Lead Contractor</h3>
-                <span class="company">Ncontracts Inc.</span>
-                <span class="date">03/2021 - 09/2021</span>
-                <ul>
-                    <li>Designed and deployed a hybrid environment, increasing system availability by 15%.</li>
-                    <li>Designed an architecture including infrastructure components such as access, networking, security, CI/CD.</li>
-                </ul>
-            </div>
-            
-            <div class="experience-item">
-                <h3>Cloud Engineer</h3>
-                <span class="company">University of Houston</span>
-                <span class="date">10/2017 - 03/2021</span>
-                <ul>
-                   <li>Configured a centralized security patching solution using Ansible, ensuring 100% server uptime.</li>
-                   <li>Implemented ELK stack, enhanced network visibility.</li>
-                   <li>Trained users on security topics, heightening cybersecurity awareness from 47% to 98%.</li>
-                </ul>
-            </div>
+                    <div class="skill-category">
+                        <h3>Data Engineering & Analytics</h3>
+                        <ul>
+                            <li class="skill-item">ETL Pipelines</li>
+                            <li class="skill-item">Data Warehousing (BigQuery)</li>
+                            <li class="skill-item">Data Governance</li>
+                            <li class="skill-item">Data Security</li>
+                            <li class="skill-item">SQL & Data Analysis</li>
+                        </ul>
+                    </div>
 
-            <div class="experience-item">
-                <h3>System Administrator</h3>
-                <span class="company">Pink Zebra Home</span>
-                <span class="date">04/2015 - 07/2017</span>
-                <ul>
-                    <li>Collaborated on system rollouts to improve operational efficiency.</li>
-                    <li>Managed and configured network infrastructure.</li>
-                </ul>
-            </div>
-
+                    <div class="skill-category">
+                        <h3>Scripting & Programming</h3>
+                        <ul>
+                            <li class="skill-item">Python</li>
+                            <li class="skill-item">Bash</li>
+                            <li class="skill-item">PowerShell</li>
+                            <li class="skill-item">YAML</li>
+                            <li class="skill-item">JSON</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                      <h3>Networking</h3>
+                      <ul>
+                        <li class="skill-item">TCP/IP</li>
+                        <li class="skill-item">VPN</li>
+                        <li class="skill-item">DNS</li>
+                        <li class="skill-item">Load Balancing</li>
+                        <li class="skill-item">Firewalls</li>
+                      </ul>
+                    </div>
+                      <div class="skill-category">
+                        <h3>Security</h3>
+                        <ul>
+                          <li class="skill-item">Identity and Access Management (IAM)</li>
+                          <li class="skill-item">Vulnerability Management</li>
+                          <li class="skill-item">Security Auditing</li>
+                          <li class="skill-item">Compliance (HIPAA, FedRAMP)</li>
+                        </ul>
+                      </div>
+                </div>
+            </section>
         </div>
-    </section>
-
-    <section id="skills" class="section reveal">
-    <div class="container">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Technical Skills</h3>
-                <ul>
-                    <li>Cloud Platforms: Expertise in AWS, Azure, and GCP core services, pricing, and best practices</li>
-                    <li>Infrastructure & Automation: Expertise in IaC tools (Terraform, Ansible, Chef)</li>
-                    <li>Networking: Strong grasp of cloud networking concepts</li>
-                    <li>Security: Solid knowledge of cloud security principles</li>
-                    <li>Linux Administration: Familiarity with Linux administration tasks</li>
-                    <li>Scripting: Proficiency in scripting languages (Python, Bash, PowerShell)</li>
-                    <li>Containers & Orchestration: Knowledge of containerization (Docker) and container orchestration (Kubernetes)</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Soft Skills</h3>
-                <ul>
-                    <li>Leadership: Mentoring junior engineers and guiding cloud initiatives</li>
-                    <li>Adaptability & Learning: Continuous learning in the evolving cloud landscape</li>
-                    <li>Time Management & Prioritization: Effective management of multiple projects</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <section id="education" class="section reveal">
-        <div class="container">
-            <h2>Education & Certifications</h2>
-            <div class="education-item">
-                <h3>University of Houston</h3>
-                <span class="degree">Bachelor's in Computer Information Systems</span>
-                <span class="date">08/2017 - 05/2020</span>
-            </div>
-            <div class="certification-item">
-                <h3>AWS Certified Solutions Architect - Associate</h3>
-                <span class="date">07/2019</span>
-            </div>
-             <div class="certification-item">
-                <h3>GCP Certified - Cloud Architect - Professional</h3>
-                <span class="date">06/2022</span>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>© 2025 Tan Vo. All rights reserved.</p>
-        </div>
-    </footer>
+    </main>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
+                    entry.target.classList.add('visible');
+
+                    // Animate ALL lists in the section including nested ones
+                    const lists = entry.target.querySelectorAll('ul');
+                    lists.forEach(list => {
+                        list.classList.add('animated');
+                        Array.from(list.children).forEach((item, index) => {
+                            item.style.transitionDelay = `${index * 0.1}s`;
+                        });
+                    });
                 }
             });
         }, { threshold: 0.1 });
 
-        reveals.forEach(element => observer.observe(element));
-    });
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
     </script>
 </body>
 </html>
