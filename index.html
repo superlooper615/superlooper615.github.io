@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,45 +20,45 @@
             max-width: 960px;
             margin: 0 auto;
             padding: 20px;
-            position: relative; /* Needed for absolute positioning */
+            position: relative;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header-group {
+            position: relative;
+            margin-bottom: 30px;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4em; /* Initial size - we'll adjust this */
-            margin-bottom: 0.2em;
+            font-size: 4em;
+            margin-bottom: 0;
             font-weight: 400;
-            /* Regular weight */
             letter-spacing: 1px;
-        }
-        /*New style*/
-        .name-header {
-            font-size: 6em; /* Much larger size */
-            margin-bottom: 0.1em; /* Reduce bottom margin */
-            font-style: italic; /* Add italic style */
-            font-weight: bold;  /* Add bold style */
+            transition: letter-spacing 0.3s ease;
+            display: inline-block;
+            margin-right: 15px;
         }
 
-        h2 {
+        h1:hover {
+            letter-spacing: 1.2px;
+        }
+
+        .greeting {
+            display: inline-block;
             font-family: 'Lora', serif;
-            font-size: 1.8em;
-            margin-bottom: 1em;
+            font-size: 1.4em;
+            font-weight: 700;
             font-style: italic;
-            font-weight: normal;
-        }
-
-        p {
-            font-size: 1.2em;
-            margin-bottom: 1.5em;
-        }
-
-        a {
-            color: #0077cc;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
+            color: #555;
+            vertical-align: super;
+            position: relative;
+            top: -0.4em;
         }
 
         .pronunciation {
@@ -67,15 +66,64 @@
             color: #666;
             font-family: 'Lora', serif;
             font-size: 1.3em;
-            margin-top: -18px;
+            margin-top: -10px;
             margin-bottom: 30px;
         }
 
-        .image-container {
-            text-align: center;
-            margin-top: 2em;
+        .ear-image-container {
+            position: absolute;
+            top: 120px;
+            right: 30px;
+            width: 280px;
+            animation: float 6s ease-in-out infinite;
+            transition: transform 0.4s ease;
+            z-index: 1;
         }
 
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .ear-image-container:hover {
+            animation-play-state: paused;
+            transform: translateY(-4px) scale(1.02);
+        }
+
+        .ear-image-container img {
+            width: 100%;
+            height: auto;
+            filter: grayscale(30%) contrast(110%);
+            mix-blend-mode: multiply;
+            transition: filter 0.4s ease;
+        }
+
+        .ear-image-container:hover img {
+            filter: grayscale(0%) contrast(100%);
+        }
+
+        .annotation {
+            text-align: center;
+            margin-top: -30px;
+            font-style: italic;
+            font-family: 'Lora', serif;
+            transform: rotate(-5deg);
+            transition: transform 0.3s ease;
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .annotation:hover {
+            transform: rotate(-8deg) scale(1.02);
+        }
+
+        .annotation:before {
+            content: "↑";
+            font-size: larger;
+            display: block;
+        }
+
+        /* Remaining CSS styles */
         ul {
             list-style-type: none;
             padding: 0;
@@ -115,34 +163,99 @@
 
         .project-list li {
             margin-bottom: .8em;
-        }
-        .project-list strong {
-            display: block; /* Make the title a block element */
-            margin-bottom: 0.2em; /* Add some space below the title */
+            transition: all 0.3s ease;
+            border-left: 2px solid transparent;
+            padding-left: 8px;
         }
 
-        /* Underlined text style */
+        .project-list li:hover {
+            padding-left: 15px;
+            border-left-color: rgba(0, 119, 204, 0.3);
+        }
+
+        .project-list strong {
+            display: block;
+            margin-bottom: 0.2em;
+        }
+
         .underlined {
             text-decoration: underline;
         }
+
         .project-section {
             margin-bottom: 2em;
+            transition: box-shadow 0.3s ease;
+            padding: 15px;
+            border-radius: 4px;
         }
 
+        .project-section:hover {
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .rotated-text {
+            position: absolute;
+            bottom: 25px;
+            right: 70px;
+            transform: rotate(-5deg);
+            font-style: italic;
+            font-family: 'Lora', serif;
+            font-size: 1.1em;
+            transition: transform 0.3s ease;
+        }
+
+        .rotated-text:hover {
+            transform: rotate(-8deg) scale(1.02);
+        }
+
+        .rotated-text:before {
+            content: "↑";
+            font-size: larger;
+            display: block;
+            margin-left: -20px;
+        }
+
+        ul.project-links a {
+            position: relative;
+        }
+
+        ul.project-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        ul.project-links a:hover:after {
+            width: 100%;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1 class = "name-header">Hi, I'm Tân Võ</h1>
-        <p class="pronunciation">/tən vɔ̌/</p>
+        <div class="header-group">
+            <h1>Tan Vo</h1>
+            <span class="greeting">Hi, I'm Tân Võ</span>
+        </div>
+        <p class="pronunciation">/tæn voʊ/ (English) - /tan vɔ̌/</p>
+
+        <div class="ear-image-container">
+            <img src="https://www.pngall.com/wp-content/uploads/15/Flower-Drawing-PNG-Cutout.png" 
+                 alt="Floral creative inspiration"
+                 style="border-radius: 4px;">
+            <p class="annotation">Creative inspiration</p>
+        </div>
 
         <h2>Featured Projects</h2>
 
         <div class="project-section">
             <h3>AWS Certification Flashcards & Data Processing</h3>
-            <p>This section showcases projects related to AWS certification preparation, including flashcards and data
-                transformation tools.</p>
+            <p>This section showcases projects related to AWS certification preparation, including flashcards and data transformation tools.</p>
             <ul class="project-list">
                 <li>
                     <a href="DEA-C01-flashcards.html"><strong>DEA-C01 Flashcards</strong></a>
@@ -162,14 +275,17 @@
                 </li>
             </ul>
         </div>
+
         <div class="project-section">
             <h3>Resumes</h3>
             <p>Examples of resumes</p>
             <ul class="project-list">
-                <li><a href="marissa-bosley-resume.html">Marissa Bosley Resume</a>: Example Resume.</li>>
+                <li><a href="marissa-bosley-resume.html">Marissa Bosley Resume</a>: Example Resume.</li>
                 <li><a href="tan-vo-resume.html">Tan Vo Resume</a>: Example resume.</li>
             </ul>
         </div>
+
+        <p class="rotated-text">More coming soon</p>
 
         <nav>
             <ul>
@@ -179,5 +295,4 @@
         </nav>
     </div>
 </body>
-
 </html>
