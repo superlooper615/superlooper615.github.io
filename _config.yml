@@ -79,6 +79,7 @@ exclude:
   - Gemfile.lock
   - README.md
   - LICENCE
+  - blog
 
 # -----------
 # CloudCannon
@@ -86,7 +87,6 @@ exclude:
 _select_data:
   call_to_actions:
     - Contact
-    - Blog
     - Map
 
   social_icons:
