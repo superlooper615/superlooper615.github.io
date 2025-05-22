@@ -1,7 +1,7 @@
 # ----
 # Site
 
-title: Aetheria Consulting LLC
+title: Justice Template
 url: "https://orchid-heron.cloudvent.net"
 baseurl:
 google_analytics_key:
@@ -16,7 +16,7 @@ author:
   email:
   twitter: # twitter username without the @ symbol
 social:
-  name: Aetheria Consulting LLC
+  name: Justice Template
   links:
     - https://github.com/CloudCannon/justice-jekyll-template
 
