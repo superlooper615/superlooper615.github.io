@@ -4,15 +4,15 @@ call_to_action: Contact
 background_image_path:
 large_header: true
 testimonials:
-  - message: We use Aetheria Consulting, LLC in all our endeavours. They offer an unparalleled service when it comes to running a business.
+  - message: Aetheria Consulting, LLC helped us migrate our patient records to the cloud securely and efficiently. Their expertise in healthcare regulations was invaluable.
     image: "https://placekitten.com/g/60/60?a=.png"
-    name: Joice Carmold
-  - message: Aetheria Consulting, LLC are the best of the best. Being local, they care about people and have strong ties to the community.
+    name: Dr. Joice Carmold
+  - message: We were struggling with data silos and inefficient workflows. Aetheria Consulting, LLC designed a cloud-based solution that streamlined our operations and improved patient care.
     image: "https://www.fillmurray.com/60/60?a=.png"
-    name: Peter Rottenburg
-  - message: Aetheria Consulting, LLC were everything we could have hoped for when buying our first home. Highly recommended to all.
+    name: Peter Rottenburg, Hospital Administrator
+  - message: Aetheria Consulting, LLC provided expert guidance on cloud security and compliance. They ensured we met all HIPAA requirements while leveraging the benefits of the cloud.
     image: "https://placebear.com/60/60?a=.png"
-    name: D. and G. Gibbleston
+    name: D. and G. Gibbleston, Healthcare IT Manager
 _options:
   image:
     width: 60
@@ -20,16 +20,18 @@ _options:
 ---
 
 <div class="editable">
-    <p>This is the <strong>Justice</strong> template from <a href="https://cloudcannon.com/">CloudCannon</a>. Justice is strong foundation for the web presence of a law firm or business. It's filled with fictitious example content to get you started.</p>
+  <p>Welcome to <b>Aetheria Consulting, LLC</b>, your partner for cloud solutions in the healthcare industry. We specialize in helping healthcare organizations leverage the power of the cloud to improve patient care, streamline operations, and reduce costs.</p>
 
-    <p>Aetheria Consulting, LLC is professional representation. Practicing for over 50 years, our team have the knowledge and skills to get you results.</p>
+  <p>With eight years of experience, our team brings the knowledge and skills to guide you through your cloud journey, from strategy to implementation. We understand the challenges and regulatory requirements of the healthcare industry, and we are committed to delivering secure, compliant, and innovative cloud solutions.</p>
+
+  <p>Contact us today to learn how <b>Aetheria Consulting, LLC</b> can help you transform your healthcare organization with the cloud.</p>
 </div>
 
 <div class="testimonials">
-    {% for testimonial in page.testimonials %}
-        <blockquote class="testimonial">
-            <p class="testimonial-message">{{ testimonial.message }}</p>
-            <p class="testimonial-author"><img src="{% include relative-src.html src=testimonial.image %}" alt="Photo of {{ testimonial.name }}"> {{ testimonial.name }}</p>
-        </blockquote>
-    {% endfor %}
+  {% for testimonial in page.testimonials %}
+    <blockquote class="testimonial">
+      <p class="testimonial-message">{{ testimonial.message }}</p>
+      <p class="testimonial-author"><img src="{% include relative-src.html src=testimonial.image %}" alt="Photo of {{ testimonial.name }}"> {{ testimonial.name }}</p>
+    </blockquote>
+  {% endfor %}
 </div>
