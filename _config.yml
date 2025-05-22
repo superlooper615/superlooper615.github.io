@@ -10,13 +10,13 @@ disqus_shortname:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
-description: Jekyll template with example content for a consulting firm.
+description: Consulting firm website.
 author:
   name:
   email:
   twitter: # twitter username without the @ symbol
 social:
-  name: Aetheria Consulting, LLC Template
+  name: Aetheria Consulting
   links:
     - https://github.com/CloudCannon/justice-jekyll-template
 
