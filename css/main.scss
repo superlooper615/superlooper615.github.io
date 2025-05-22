@@ -9,3 +9,8 @@ $mobile-break: 700px;
 @import "layout";
 @import "forms";
 @import "cloudcannon";
+
+header h1 a span {
+  font-size: 0.6em; /* Even smaller */
+  display: block; /* Make the span a block element */
+}
